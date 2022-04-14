@@ -7,7 +7,7 @@ export const BILL_VALUE_OPTIONS = [
   "De R$1.000,00 a R$1.999,00",
   "De R$2.000,00 a R$4.999,00",
   "De R$5.000,00 a R$9.999,00",
-  "Acime de R$10.000,00",
+  "Acima de R$10.000,00",
 ];
 
 export const UF: [

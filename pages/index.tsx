@@ -231,6 +231,7 @@ export const Index: NextPage = () => {
                     inputHandler={inputHandler}
                     options={UF}
                     forceError={formState.inputs?.uf?.forceError || false}
+                    initialValue="MG"
                     listOnTop
                   />
                 </div>
