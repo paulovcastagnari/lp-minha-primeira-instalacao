@@ -2,7 +2,6 @@ import { Fragment, useReducer, useEffect } from "react";
 
 import { inputReducer } from "../../util/reducers/inputReducer";
 import { transformInputText } from "../../util/string/transformInputText";
-import { creditCardFocusHandler } from "../../util/checkout/creditCardFocusHandler";
 
 interface InputRegularProps {
   id: string;
@@ -134,11 +133,6 @@ export const InputRegular = (props: InputRegularProps) => {
         onChange={changeHandler}
         onBlur={touchHandler}
         value={transformInputText(value, "NONE", filter)}
-        onFocus={(e) => {
-          if (setCardFocus) {
-            creditCardFocusHandler(e, setCardFocus);
-          }
-        }}
       />
       <label htmlFor={id} className="input-regular__label">
         {label}

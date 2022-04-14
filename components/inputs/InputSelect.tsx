@@ -2,8 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import ExpandMoreRoundedIcon from "@material-ui/icons/ExpandMoreRounded";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 
-import { creditCardFocusHandler } from "../../util/checkout/creditCardFocusHandler";
-
 interface InputSelectProps {
   id: string;
   inputHandler: (
@@ -97,11 +95,6 @@ export const InputSelect = (props: InputSelectProps) => {
         className="input-select"
         onBlur={() => {
           setWasTouched(true);
-        }}
-        onFocus={(e) => {
-          if (setCardFocus) {
-            creditCardFocusHandler(e, setCardFocus);
-          }
         }}
         tabIndex={0}
       >
