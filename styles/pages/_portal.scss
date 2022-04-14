@@ -1,0 +1,129 @@
+.portal {
+  display: grid;
+  grid-template-columns: [nav-start] 25rem [nav-end] repeat(
+      12,
+      [col-start] minmax(min-content, 1fr) [col-end]
+    );
+  grid-template-rows: 6rem min-content;
+
+  @include respond(bp900) {
+    grid-template-columns: repeat(
+      12,
+      [col-start] minmax(min-content, 1fr) [col-end]
+    );
+    grid-template-rows: min-content;
+  }
+
+  &__main-content {
+    position: relative;
+    grid-column: col-start 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 6rem);
+    overflow-y: auto;
+
+    @include respond(bp900) {
+      height: auto;
+      grid-row: 1 / -1;
+      margin-top: 6rem;
+    }
+  }
+
+  &__empty-message {
+    font-weight: 700;
+  }
+
+  &__certificates {
+    display: grid;
+    grid-template-columns: minmax(max-content, 80rem);
+    background-color: $color-grey-dark-2;
+    padding: 1rem 3rem;
+    border-radius: $default-border-radius;
+    box-shadow: $default-box-shadow;
+    margin: 0 4rem 5rem;
+  }
+
+  &__certificate {
+    display: grid;
+    grid-template-columns: min-content 1fr 20rem min-content;
+    align-items: center;
+    padding: 2rem 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-grey-dark-3;
+    }
+
+    @include respond(bp1000) {
+      grid-template-columns: min-content 1fr 10rem min-content;
+    }
+
+    @include respond(bp500) {
+      grid-template-columns: min-content 1fr min-content;
+    }
+  }
+
+  &__certificate-title {
+    text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 32rem;
+
+    @include respond(bp600) {
+      max-width: 25rem;
+    }
+
+    @include respond(bp500) {
+      font-size: 1.7rem;
+      max-width: 22rem;
+    }
+
+    @include respond(bp400) {
+      font-size: 1.6rem;
+      max-width: 17rem;
+    }
+  }
+
+  &__certificate-progress {
+    margin-right: 2rem;
+  }
+
+  &__certificate-completion {
+    justify-self: center;
+
+    &--completed {
+      color: $color-primary;
+    }
+
+    @include respond(bp500) {
+      display: none;
+    }
+  }
+
+  &__support {
+    margin: 5rem 0 10rem;
+    width: 90%;
+    max-width: 90rem;
+  }
+
+  &__support-whatsapp {
+    margin-top: 2rem;
+    font-size: 1.7rem;
+  }
+
+  &__support-whatsapp-btn {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: all 0.2s;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &:active {
+      color: $color-primary-dark;
+    }
+  }
+}

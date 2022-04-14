@@ -1,0 +1,87 @@
+.progress {
+  padding: 0 2rem;
+  @include center-xy-axis-horizontal;
+
+  &--no-padding {
+    padding: 0;
+  }
+
+  @include respond(bp900) {
+    display: none;
+  }
+
+  &--no-hidding {
+    @include respond(bp900) {
+      display: block;
+    }
+  }
+
+  & input {
+    display: none;
+  }
+
+  &__text {
+    padding: 1rem;
+    transition: all 0.2s;
+    color: $color-grey-light-2;
+  }
+
+  &__meter {
+    --holesize: 60%;
+    width: 4rem;
+    height: 4rem;
+    @include center-xy-axis-horizontal;
+    position: relative;
+    z-index: 20;
+
+    & svg {
+      font-size: 2rem !important;
+      color: $color-grey-light-3;
+    }
+
+    &--completed {
+      & svg {
+        color: $color-primary;
+      }
+    }
+
+    &--completed + .progress__text {
+      color: $color-primary;
+    }
+
+    &--link + .progress__text {
+      cursor: pointer;
+      color: $color-primary;
+
+      &:hover {
+        color: $color-primary-light;
+      }
+
+      &:active {
+        color: $color-primary-light;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 50%;
+      z-index: -1;
+      background: conic-gradient(
+        $color-primary-light,
+        $color-primary-dark,
+        $color-primary var(--progress, 0%),
+        $color-grey-light-3 var(--progress, 0%) 100%
+      );
+
+      mask-image: radial-gradient(
+        transparent var(--holesize),
+        $color-black calc(var(--holesize) + 0.5px)
+      );
+    }
+  }
+}

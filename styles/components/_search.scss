@@ -1,0 +1,68 @@
+.search {
+  width: 100%;
+  max-width: 50rem;
+  @include center-xy-axis-horizontal;
+  position: relative;
+
+  &__input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: rgba($color-white, 0.07);
+    border: none;
+    padding: 0.7rem 2.75rem 0.7rem 2rem;
+    border-radius: 100px;
+    width: 90%;
+    max-height: 20rem;
+    transition: all 0.2s;
+
+    &:focus,
+    &:active {
+      outline: none;
+      width: 100%;
+      background-color: rgba($color-white, 0.14);
+
+      & ~ svg {
+        right: 3%;
+      }
+    }
+
+    &::-webkit-input-placeholder {
+      font-size: 1.4rem;
+      font-weight: 100;
+      color: $color-grey-light-3;
+    }
+
+    &--disabled {
+      cursor: default;
+
+      &:focus,
+      &:active {
+        width: 90%;
+        background-color: rgba($color-white, 0.07);
+
+        & ~ svg {
+          right: 0;
+        }
+      }
+
+      &::-webkit-input-placeholder {
+        color: $color-grey-dark-4;
+      }
+    }
+  }
+
+  & svg {
+    position: absolute;
+    right: 8%;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    color: $color-grey-light-2;
+    transition: all 0.2s;
+  }
+
+  &--disabled svg {
+    color: $color-grey-dark-4;
+  }
+}

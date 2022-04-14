@@ -1,0 +1,16 @@
+.control-bar {
+  margin-left: auto;
+
+  @include center-xy-axis-horizontal;
+
+  @include respond(bp500) {
+    position: absolute;
+    top: 6.5rem;
+  }
+
+  &__btn {
+    &--watched {
+      color: $color-primary;
+    }
+  }
+}

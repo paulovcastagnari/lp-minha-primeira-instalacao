@@ -1,0 +1,28 @@
+.avatar {
+  &__item {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    background-color: $color-grey-light-2;
+  }
+
+  &__placeholder {
+    @include center-xy-axis-horizontal;
+    color: $color-grey-dark-2;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  &--has-img &__item {
+    background-color: transparent;
+  }
+
+  &--small &__item {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &--small &__placeholder {
+    font-size: 1.5rem;
+  }
+}

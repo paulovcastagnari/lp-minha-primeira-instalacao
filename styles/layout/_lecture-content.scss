@@ -1,0 +1,24 @@
+.lecture-content {
+  padding: 3rem 5rem;
+  width: 100%;
+  min-height: 65vh;
+  max-height: 65vh;
+  height: auto;
+  color: $color-grey-light-2;
+  overflow-y: auto;
+  background-color: rgba($color-white, 0.035);
+  box-shadow: $default-box-shadow;
+
+  a {
+    &:link,
+    &:active,
+    &:visited {
+      color: $color-primary-light;
+    }
+  }
+
+  ul,
+  ol {
+    margin-left: 2.5rem;
+  }
+}

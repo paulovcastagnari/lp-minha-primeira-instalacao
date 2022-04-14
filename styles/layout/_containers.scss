@@ -1,0 +1,33 @@
+.select-options {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.comments-container {
+  grid-column: 4 / 9;
+}
+
+.align-buttons-horizontal {
+  @include center-xy-axis-horizontal;
+  width: 100%;
+
+  & > button {
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.center-alignment-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-spinner {
+  @include center-xy-axis-horizontal;
+  position: relative;
+  min-height: 10rem;
+  width: 10rem;
+}

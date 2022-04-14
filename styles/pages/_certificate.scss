@@ -1,0 +1,100 @@
+.certificate {
+  display: block;
+  margin: 0 auto;
+  // margin-bottom: 0.5cm;
+  background: #f1f0f0;
+  position: relative;
+  width: 29.7cm;
+  height: 21cm;
+
+  &__container {
+    position: relative;
+    min-height: 100vh;
+    height: auto;
+  }
+
+  &__front {
+    background-image: url("../../public/certificate-background-front.jpg");
+    background-size: cover;
+  }
+
+  &__back {
+    background-image: url("../../public/certificate-background-back.jpg");
+    background-size: cover;
+  }
+
+  &__title {
+    position: relative;
+    top: 4.4cm;
+    left: 3.1cm;
+    font-size: 1.5cm;
+    letter-spacing: 0.1cm;
+    color: #4a4f52;
+  }
+
+  &__p {
+    position: relative;
+    top: 4.8cm;
+    left: 3.1cm;
+    font-size: 0.53cm;
+    color: #4a4f52;
+    max-width: 15cm;
+    line-height: 1.5;
+    margin-bottom: 0.5cm;
+
+    &--bold {
+      font-weight: 700;
+    }
+
+    &--capitalized {
+      text-transform: capitalize;
+    }
+  }
+
+  &__footer {
+    position: absolute;
+    left: 3.1cm;
+    font-size: 0.3cm;
+    color: #4a4f52;
+    max-width: 15cm;
+    line-height: 1.5;
+
+    &--1 {
+      top: 19.1cm;
+    }
+
+    &--2 {
+      top: 19.6cm;
+    }
+  }
+
+  &__program-content {
+    column-count: 3;
+    column-gap: 1cm;
+    padding: 1cm;
+    height: 100%;
+    width: 100%;
+    column-fill: auto;
+    color: #4a4f52;
+    font-size: 1.3rem;
+  }
+
+  &__program-content-section {
+    font-family: $font-title;
+    margin-bottom: 0.15cm;
+
+    &:not(:first-child) {
+      margin-top: 0.5cm;
+    }
+  }
+
+  &__program-content-item {
+    margin-bottom: 0.12cm;
+  }
+
+  &__qr-code {
+    position: absolute;
+    top: 16cm;
+    left: 24.6cm;
+  }
+}

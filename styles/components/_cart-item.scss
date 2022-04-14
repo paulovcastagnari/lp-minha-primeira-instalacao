@@ -1,0 +1,186 @@
+.cart-item {
+  width: 90%;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba($color-grey-dark-4, 0.7);
+
+  &:not(:first-child) {
+    padding-top: 3rem;
+  }
+
+  @include respond(bp1500) {
+    width: 97%;
+  }
+
+  &--checkout {
+    width: 100%;
+
+    &:not(:first-child) {
+      padding-top: 3rem;
+    }
+
+    &:first-child {
+      padding-top: 1rem;
+    }
+
+    @include respond(bp1500) {
+      width: 100%;
+    }
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+
+    @include respond(bp500) {
+      padding-left: 0.8rem;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    @include respond(bp500) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__img {
+    width: 8rem;
+    margin-right: 2rem;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+
+    @include respond(bp600) {
+      font-size: 2rem;
+    }
+  }
+
+  &__controls {
+    display: flex;
+  }
+
+  &__bonus-label {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    color: $color-primary-dark;
+  }
+
+  &__btn {
+    font-size: 1rem;
+  }
+
+  &__price,
+  &__total-price {
+    align-self: start;
+  }
+
+  &__price-from-perc {
+    color: $color-primary-light;
+    font-size: 1.4rem;
+    margin-right: 0.6rem;
+  }
+
+  &__price-from-value {
+    color: $color-grey-light-3;
+    font-size: 1.4rem;
+  }
+
+  &__price-from-value-int {
+    margin-right: 0.2rem;
+    text-decoration: line-through;
+  }
+
+  &__price-from-value-dec {
+    font-size: 1.1rem;
+    text-decoration: line-through;
+  }
+
+  &__price {
+    text-align: end;
+
+    @include respond(bp500) {
+      text-align: start;
+    }
+
+    &--total {
+      @include respond(bp500) {
+        text-align: end;
+      }
+    }
+  }
+
+  &__price-int {
+    font-size: 2.75rem;
+    margin-right: 0.3rem;
+
+    @include respond(bp500) {
+      font-size: 2rem;
+    }
+  }
+
+  &__upsell-list {
+    width: 90%;
+    margin-top: 1.2rem;
+    font-size: 1.5rem;
+
+    @include respond(bp1500) {
+      width: 97%;
+    }
+
+    &--checkout {
+      width: 100%;
+      border: 2px solid $color-primary;
+      border-radius: $default-border-radius;
+      padding: 2.5rem 0;
+      margin-top: 2.5rem;
+      // background-color: $color-grey-dark-1;
+      background-color: rgba($color-black, 0.25);
+
+      @include respond(bp1500) {
+        width: 100%;
+      }
+
+      @include respond(bp700) {
+        padding: 2.5rem 1rem;
+      }
+    }
+  }
+
+  &__upsell-list-title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__upsell-item {
+    display: flex;
+    align-items: center;
+    margin-left: 9.2rem;
+
+    @include respond(bp700) {
+      margin-left: 0;
+    }
+
+    @include respond(bp600) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__upsell-item-text {
+    text-decoration: none;
+  }
+
+  &__upsell-item-price {
+    margin: 0 0.3rem 0 1rem;
+    font-weight: 300;
+  }
+}

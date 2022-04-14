@@ -1,0 +1,53 @@
+.filter {
+  position: relative;
+  width: 100%;
+
+  &--comments {
+    margin-bottom: 3rem;
+    top: 2rem;
+
+    @include respond(bp500) {
+      margin-bottom: 6rem;
+      top: 6rem;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: minmax(max-content, 40rem);
+    justify-content: center;
+    align-content: center;
+    grid-gap: 2rem 3rem;
+    padding: 0 10rem;
+    height: 0;
+    opacity: 0;
+    transition: height ease-in 0.3s, opacity 0.25s;
+
+    &--active {
+      transition: height ease-out 0.3s, opacity 0.25s;
+      opacity: 1;
+      height: 13rem;
+    }
+  }
+
+  &__controls {
+    @include center-xy-axis-horizontal;
+  }
+
+  &__switch-btn {
+    position: absolute;
+    top: 1.4rem;
+    left: 1.4rem;
+    z-index: 1;
+  }
+
+  &__control-btn {
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  &__control-btn-apply {
+    margin-left: 2rem;
+  }
+}

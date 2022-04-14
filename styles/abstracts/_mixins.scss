@@ -1,0 +1,107 @@
+// CENTER CONTENT
+@mixin center-xy-axis-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin center-xy-axis-horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// MEDIA QUERY MANAGER
+@mixin respond($breakpoint) {
+  @if $breakpoint == bp400 {
+    //400px
+    @media only screen and (max-width: 25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == bp500 {
+    //500px
+    @media only screen and (max-width: 31.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == bp600 {
+    //600px
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == bp700 {
+    //700px
+    @media only screen and (max-width: 43.75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == bp800 {
+    //800px
+    @media only screen and (max-width: 50em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == bp900 {
+    //900px
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == bp1000 {
+    //1000px
+    @media only screen and (max-width: 62.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == bp1100 {
+    //1100px
+    @media only screen and (max-width: 68.75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == bp1200 {
+    //1200px
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == bp1300 {
+    //1300px
+    @media only screen and (max-width: 81.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == bp1400 {
+    //1400px
+    @media only screen and (max-width: 87.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == bp1500 {
+    //1500px
+    @media only screen and (max-width: 93.75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == bp1600 {
+    //1600px
+    @media only screen and (max-width: 100em) {
+      @content;
+    }
+  }
+}

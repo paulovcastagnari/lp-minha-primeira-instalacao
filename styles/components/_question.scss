@@ -1,0 +1,50 @@
+.question {
+  display: block;
+  width: 100%;
+  list-style: none;
+  padding: 2.8rem 3rem 3rem;
+  border-radius: $default-border-radius;
+  background-color: rgba($color-grey-dark-2, 0.8);
+  box-shadow: $default-box-shadow;
+  transition: all 0.3s;
+
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+
+  &:hover {
+    background-color: rgba($color-grey-dark-3, 0.6);
+  }
+
+  &__number {
+    display: inline-block;
+    font-size: 1.3rem;
+  }
+
+  &__title {
+    font-weight: 700;
+    padding: 0.9rem 0 2rem;
+  }
+
+  &__alts {
+    list-style: none;
+  }
+
+  &__alt {
+    display: flex;
+    align-items: flex-start;
+    padding: 0.3rem 0;
+  }
+
+  &__checkbox {
+    transform: translateY(-0.6rem);
+  }
+
+  &__alt-number {
+    margin-right: 1.2rem;
+  }
+
+  &__alt-text {
+    font-size: 1.5rem;
+  }
+}

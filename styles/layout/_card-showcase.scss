@@ -1,0 +1,28 @@
+.card-showcase {
+  width: 112rem;
+  display: grid;
+  grid-template-columns: repeat(3, 34rem);
+  grid-gap: 5rem;
+  margin-bottom: 5rem;
+
+  @include respond(bp1500) {
+    width: 73rem;
+    grid-template-columns: repeat(2, 34rem);
+  }
+
+  @include respond(bp1100) {
+    width: 34rem;
+    grid-template-columns: 34rem;
+  }
+
+  @include respond(bp900) {
+    width: 73rem;
+    grid-gap: 6rem;
+    grid-template-columns: repeat(2, 34rem);
+  }
+
+  @include respond(bp700) {
+    width: 34rem;
+    grid-template-columns: 34rem;
+  }
+}

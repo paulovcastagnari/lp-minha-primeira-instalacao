@@ -1,0 +1,95 @@
+.whatsapp {
+  &__chat {
+    width: 30rem;
+    background-color: $color-grey-dark-2;
+    border-radius: $default-border-radius;
+    box-shadow: $default-box-shadow;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.2s, transform 0.7s;
+    position: fixed;
+    right: 3rem;
+    bottom: 9.5rem;
+    z-index: 50;
+
+    &--active {
+      opacity: 1;
+      transform: scale(1);
+      transition: all 0.2s;
+
+      & a:link,
+      & a:visited {
+        color: $color-grey-light-2;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__chat-header {
+    padding: 0.35rem 1rem;
+    background-color: $color-primary;
+    color: $color-grey-dark-1;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+  }
+
+  &__chat-header-txt {
+    display: inline-block;
+    flex: 1;
+    font-weight: 700;
+  }
+
+  &__chat-header-close {
+    padding: 0.1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+
+    & svg {
+      font-size: 2.3rem;
+      cursor: pointer;
+    }
+
+    &:hover {
+      background-color: rgba($color-black, 0.1);
+    }
+
+    &:active {
+      background-color: rgba($color-black, 0.15);
+    }
+  }
+
+  &__chat-msg {
+    padding: 1.5rem 2rem 1rem;
+  }
+
+  &__chat-msg-inner {
+    border-radius: $default-border-radius;
+    box-shadow: $default-box-shadow;
+    padding: 1rem;
+    background-color: $color-grey-dark-3;
+    font-size: 1.5rem;
+  }
+
+  &__chat-form {
+    padding: 1rem 2rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 6.56rem;
+    justify-items: end;
+  }
+
+  &__send {
+    margin: 1.5rem 0 0;
+  }
+
+  &__btn {
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    z-index: 101;
+  }
+}

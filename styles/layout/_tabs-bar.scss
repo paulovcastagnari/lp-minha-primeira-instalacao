@@ -1,0 +1,58 @@
+.tabs-bar {
+  position: relative;
+  width: 98%;
+  border-bottom: 1px solid $color-grey-dark-4;
+  display: flex;
+
+  @include respond(bp500) {
+    width: auto;
+    justify-content: center;
+  }
+
+  &__highlight-box {
+    width: 12rem;
+    border-bottom: 1px solid $color-primary;
+    margin-bottom: -1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(0);
+    transition: transform 0.3s;
+
+    &--1 {
+      transform: translateX(12rem);
+    }
+
+    &--2 {
+      transform: translateX(24rem);
+    }
+  }
+
+  &__btn {
+    &,
+    &:link,
+    &:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 2rem;
+      position: relative;
+      font-size: 1.2rem;
+      font-weight: 700;
+      background-color: transparent;
+      color: $color-grey-light-2;
+      border: none;
+      cursor: pointer;
+      transition: color 0.2s;
+      width: 12rem;
+      @include center-xy-axis-horizontal;
+    }
+
+    &:hover {
+      color: $color-primary-light;
+    }
+
+    &--active {
+      color: $color-primary;
+    }
+  }
+}

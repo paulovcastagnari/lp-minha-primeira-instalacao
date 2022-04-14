@@ -1,0 +1,142 @@
+.typ {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    padding: 2rem 0 2.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-image: linear-gradient(
+      to right,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    color: $color-grey-dark-1;
+    box-shadow: $default-box-shadow;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.2rem;
+    font-size: 3rem;
+  }
+
+  &__subtitle {
+    display: inline-block;
+    font-size: 2rem;
+    max-width: 80%;
+  }
+
+  &__qr-code,
+  &__bill {
+    @include center-xy-axis-vertical;
+    margin-bottom: 2rem;
+  }
+
+  &__qr-code-title,
+  &__bill-title {
+    margin: 4rem 0 3rem;
+  }
+
+  &__qr-code-img-container {
+    padding: 1.2rem;
+    background-color: $color-grey-light-1;
+    @include center-xy-axis-vertical;
+  }
+
+  &__qr-code-img {
+    width: 30rem;
+    max-width: 100%;
+  }
+
+  &__isnt {
+    max-width: 100rem;
+    padding: 7rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 4rem 10rem;
+
+    @include respond(bp900) {
+      grid-gap: 4rem 6rem;
+    }
+
+    @include respond(bp700) {
+      padding: 6rem;
+      grid-gap: 4rem 6rem;
+    }
+
+    @include respond(bp600) {
+      grid-template-columns: 1fr;
+      grid-gap: 3rem 0;
+    }
+
+    @include respond(bp400) {
+      padding: 4rem;
+    }
+  }
+
+  &__isnt-item-title,
+  &__qr-code-title,
+  &__bill-title {
+    display: inline-block;
+    border-radius: $default-border-radius;
+    background-image: linear-gradient(
+      to right,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 2.4rem;
+    letter-spacing: 0.25rem;
+    text-transform: uppercase;
+  }
+
+  &__isnt-item-text {
+    display: inline-block;
+    margin-top: 1rem;
+    color: $color-grey-light-2;
+
+    &--highlight {
+      color: $color-primary-dark;
+    }
+
+    &--link {
+      &,
+      &:link,
+      &:visited {
+        cursor: pointer;
+        text-decoration: underline;
+        color: $color-primary-dark;
+        transition: all 0.2s;
+      }
+
+      &:hover,
+      &:active {
+        color: $color-primary-light;
+      }
+    }
+  }
+
+  &__cta {
+    max-width: 100rem;
+    width: 100%;
+    margin-bottom: 6rem;
+    padding: 0 7rem;
+
+    @include respond(bp700) {
+      padding: 0 6rem;
+    }
+
+    @include respond(bp400) {
+      padding: 0 4rem;
+      margin-bottom: 5rem;
+    }
+  }
+}

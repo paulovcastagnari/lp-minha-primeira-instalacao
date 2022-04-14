@@ -1,0 +1,225 @@
+.index {
+  width: 100%;
+  display: flex;
+  padding: 0 7rem 10rem 7rem;
+  flex-direction: column;
+  align-items: center;
+
+  @include respond(bp700) {
+    padding: 0 2rem 7rem 2rem;
+  }
+
+  &__navs {
+    display: grid;
+    justify-content: center;
+    grid-gap: 2rem 0;
+    grid-template-columns: repeat(4, max-content);
+  }
+
+  &__main-img {
+    margin-top: 6rem;
+    width: 50rem;
+
+    @include respond(bp1200) {
+      width: 40rem;
+    }
+
+    @include respond(bp700) {
+      margin-top: 5rem;
+      width: 32rem;
+    }
+  }
+
+  &__title-container {
+    position: relative;
+
+    @include respond(bp700) {
+      margin-top: -1.5rem;
+    }
+  }
+
+  &__title-1 {
+    position: relative;
+    display: inline-block;
+    font-size: 5rem;
+    top: 2rem;
+    left: 6.5rem;
+    color: $color-grey-light-2;
+    font-family: $font-title;
+    font-weight: 700;
+
+    @include respond(bp1200) {
+      font-size: 3.5rem;
+    }
+
+    @include respond(bp700) {
+      left: 4rem;
+      top: 1.5rem;
+    }
+  }
+
+  &__title-2 {
+    position: relative;
+    left: 10rem;
+    top: 2rem;
+    font-size: 3rem;
+    color: $color-grey-light-2;
+    font-family: $font-title;
+    font-weight: 700;
+
+    @include respond(bp1200) {
+      font-size: 2.5rem;
+    }
+
+    @include respond(bp700) {
+      left: 6rem;
+      top: 1.5rem;
+    }
+  }
+
+  &__title-3 {
+    font-size: 8.5rem;
+    color: $color-white;
+    font-family: $font-title;
+    font-weight: 700;
+
+    @include respond(bp1200) {
+      font-size: 7.5rem;
+    }
+
+    @include respond(bp700) {
+      font-size: 5.5rem;
+    }
+  }
+
+  &__title-logo {
+    width: 13rem;
+    height: 13rem;
+    position: relative;
+    left: 12rem;
+    top: 4rem;
+
+    @include respond(bp1200) {
+      width: 10rem;
+      height: 10rem;
+    }
+
+    @include respond(bp700) {
+      width: 9rem;
+      height: 9rem;
+      left: 7rem;
+      top: 3rem;
+    }
+  }
+
+  &__main-copy {
+    font-size: 2rem;
+    font-family: $font-primary;
+    text-align: center;
+    display: inline-block;
+    max-width: 90rem;
+    margin-top: 1.5rem;
+    font-weight: 400;
+
+    @include respond(bp1200) {
+      max-width: 70rem;
+    }
+
+    @include respond(bp700) {
+      font-size: 1.7rem;
+      max-width: 40rem;
+    }
+
+    &--highlight {
+      color: $color-primary;
+      font-weight: 700;
+    }
+  }
+
+  &__form-container {
+    width: 100%;
+    max-width: 90rem;
+  }
+
+  &__form-paragraph {
+    text-align: left;
+    width: 100%;
+    font-size: 1.3rem;
+  }
+
+  &__cta {
+    width: 105rem;
+    margin-top: 5rem;
+
+    @include respond(bp1200) {
+      width: 70rem;
+    }
+
+    @include respond(bp700) {
+      width: 36rem;
+    }
+  }
+
+  &__comments {
+    padding: 5rem 0 8rem;
+    background-color: $color-grey-light-2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__comments-title {
+    color: $color-grey-dark-2;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+  }
+}
+
+.fb-comments-container {
+  width: 80rem;
+
+  @include respond(bp1200) {
+    width: 70rem;
+  }
+
+  @include respond(bp700) {
+    width: 36rem;
+  }
+}
+
+.glow {
+  -webkit-animation: glow-light 1s ease-in-out infinite alternate;
+  -moz-animation: glow-light 1s ease-in-out infinite alternate;
+  animation: glow-light 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow-strong {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px $color-primary-dark,
+      0 0 20px $color-primary-dark, 0 0 25px $color-primary-dark,
+      0 0 30px $color-primary-dark, 0 0 35px $color-primary-dark;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 15px $color-primary-light,
+      0 0 20px $color-primary-light, 0 0 25px $color-primary-light,
+      0 0 30px $color-primary-light, 0 0 35px $color-primary-light,
+      0 0 40px $color-primary-light;
+  }
+}
+
+@keyframes glow-light {
+  from {
+    text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 8px $color-primary-dark,
+      0 0 10px $color-primary-dark, 0 0 13px $color-primary-dark,
+      0 0 15px $color-primary-dark, 0 0 18px $color-primary-dark;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 8px $color-primary-light,
+      0 0 10px $color-primary-light, 0 0 13px $color-primary-light,
+      0 0 15px $color-primary-light, 0 0 18px $color-primary-light,
+      0 0 20px $color-primary-light;
+  }
+}

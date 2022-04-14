@@ -1,0 +1,112 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba($color-black, 0.8);
+  z-index: 151;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  @include center-xy-axis-vertical;
+
+  @supports (-webkit-backdrop-filter: blur(10px)) or
+    (backdrop-filter: blur(3px)) {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    background-color: rgba($color-black, 0.7);
+  }
+
+  &--important {
+    z-index: 200;
+  }
+
+  &__content {
+    position: relative;
+    padding: 4.5rem;
+    background-color: $color-grey-dark-2;
+    border-radius: $default-border-radius;
+    opacity: 0;
+    transform: scale(0.25);
+    transition: all 0.5s 0.2s;
+    max-width: 90%;
+    min-width: 32rem;
+    @include center-xy-axis-vertical;
+  }
+
+  &__error-text,
+  &__confirm-text,
+  &__success-text,
+  &__prompt-text {
+    display: inline-block;
+    max-width: 50rem;
+  }
+
+  &__prompt-text {
+    text-align: center;
+
+    &--bold {
+      font-weight: 700;
+    }
+  }
+
+  &__prompt-img-container {
+    width: 100%;
+    @include center-xy-axis-horizontal;
+  }
+
+  &__prompt-img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: $default-border-radius;
+  }
+
+  &--active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &--active > &__content {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &__close {
+    color: $color-grey-light-2;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s;
+    line-height: 1;
+    padding: 0.2rem 0.8rem;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__invalid-title {
+    color: $color-primary-light;
+  }
+
+  &__invalid-list {
+    padding: 0 2rem;
+  }
+
+  &__actions-container {
+    margin-top: 3rem;
+    @include center-xy-axis-vertical;
+    width: 100%;
+  }
+
+  &__action {
+    margin-right: 0;
+    margin-top: 2.25rem;
+    width: 100%;
+  }
+}

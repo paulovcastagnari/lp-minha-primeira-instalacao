@@ -1,0 +1,167 @@
+.cart {
+  display: grid;
+  grid-template-columns: repeat(
+    12,
+    [col-start] minmax(min-content, 1fr) [col-end]
+  );
+  grid-template-rows: 6rem min-content;
+
+  @include respond(bp900) {
+    grid-template-rows: min-content;
+  }
+
+  &__main-content {
+    grid-column: 1 / -1;
+
+    @include respond(bp900) {
+      margin-top: 6rem;
+    }
+  }
+
+  &__products {
+    margin: 6rem 30rem;
+    padding: 4rem;
+    background-color: $color-grey-dark-2;
+    border-radius: $default-border-radius;
+    box-shadow: $default-box-shadow;
+    @include center-xy-axis-vertical;
+
+    @include respond(bp1500) {
+      margin: 6rem 20rem;
+    }
+
+    @include respond(bp1300) {
+      margin: 6rem 10rem;
+    }
+
+    @include respond(bp1000) {
+      margin: 3rem 2rem;
+      padding: 4rem 3rem;
+    }
+  }
+
+  &__total-price-int {
+    font-size: 2.75rem;
+    margin-right: 0.3rem;
+
+    @include respond(bp500) {
+      font-size: 2rem;
+    }
+  }
+
+  &__total {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 2rem 0 3rem;
+
+    @include respond(bp1500) {
+      width: 97%;
+    }
+
+    @include respond(bp500) {
+      justify-content: center;
+    }
+  }
+
+  &__total-label {
+    display: inline-block;
+    font-size: 2.75rem;
+    margin-right: 6rem;
+
+    @include respond(bp500) {
+      font-size: 2rem;
+    }
+  }
+
+  &__cta {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+
+    @include respond(bp1500) {
+      width: 97%;
+    }
+
+    @include respond(bp500) {
+      justify-content: center;
+    }
+  }
+
+  &__empty-message {
+    &,
+    &:link,
+    &:visited {
+      margin-top: 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: $color-grey-light-2;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-primary;
+    }
+  }
+
+  &__side-content {
+    grid-column: 1 / -1;
+    @include center-xy-axis-horizontal;
+  }
+
+  &__suggested-container {
+    position: relative;
+  }
+
+  &__suggested-products {
+    display: flex;
+    margin: -4rem 0 3rem;
+    padding: 5rem 0;
+    width: 133rem;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+    @include respond(bp1500) {
+      width: 106rem;
+    }
+
+    @include respond(bp1200) {
+      width: 79rem;
+    }
+
+    @include respond(bp700) {
+      width: 52rem;
+    }
+
+    @include respond(bp500) {
+      width: 26rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__cross-sell-item-cont {
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  &__btn-scoll-suggested {
+    position: absolute;
+    top: 14.25rem;
+
+    @include respond(bp800) {
+      top: 16.5rem;
+    }
+  }
+
+  &__btn-scoll-suggested--back {
+    left: -2rem;
+  }
+
+  &__btn-scoll-suggested--front {
+    right: -2rem;
+  }
+}

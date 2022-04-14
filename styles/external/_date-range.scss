@@ -1,0 +1,457 @@
+.date-range-container {
+  position: relative;
+  box-shadow: $default-box-shadow;
+  border-radius: $default-border-radius;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.rdrCalendarWrapper {
+  color: $color-grey-light-2;
+  font-size: 12px;
+  background-color: $color-grey-dark-2;
+}
+
+.rdrDateDisplayWrapper {
+  background-color: $color-grey-dark-2;
+}
+
+.rdrDateDisplay {
+  margin: 0.833em;
+}
+
+.rdrDateDisplayItem {
+  border-radius: 4px;
+  background-color: $color-grey-dark-3;
+  box-shadow: $default-box-shadow;
+  border: 1px solid transparent;
+  input {
+    cursor: pointer;
+    height: 2.5em;
+    line-height: 2.5em;
+    border: 0px;
+    background: transparent;
+    width: 100%;
+    color: $color-grey-light-2;
+    &::-webkit-input-placeholder {
+      color: $color-grey-light-4;
+    }
+  }
+}
+
+.rdrDateDisplayItemActive {
+  border-color: $color-primary-dark;
+}
+
+.rdrDateDisplayItemActive {
+  input {
+    color: $color-grey-light-2;
+  }
+}
+
+.rdrMonthAndYearWrapper {
+  align-items: center;
+  height: 60px;
+  padding-top: 10px;
+}
+
+.rdrMonthAndYearPickers {
+  font-weight: 600;
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+    background: $color-grey-dark-2;
+    padding: 10px 30px 10px 10px;
+    border-radius: 4px;
+    outline: 0;
+    color: $color-grey-light-2;
+    background-color: $color-grey-dark-2;
+    background-position: right 8px center;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+      background-color: $color-grey-dark-3;
+    }
+
+    & option:hover,
+    & option:checked {
+      color: $color-grey-dark-1;
+      background: $color-primary;
+    }
+  }
+}
+
+.rdrMonthPicker,
+.rdrYearPicker {
+  margin: 0 5px;
+}
+
+.rdrNextPrevButton {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: 0 0.833em;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: $color-grey-dark-3;
+  &:hover {
+    background: $color-grey-dark-4;
+  }
+  i {
+    display: block;
+    width: 0;
+    height: 0;
+    padding: 0;
+    text-align: center;
+    border-style: solid;
+    margin: auto;
+    transform: translate(-3px, 0px);
+  }
+}
+
+.rdrPprevButton {
+  i {
+    border-width: 4px 6px 4px 4px;
+    border-color: transparent $color-grey-light-2 transparent transparent;
+    transform: translate(-3px, 0px);
+  }
+}
+
+.rdrNextButton {
+  i {
+    margin: 0 0 0 7px;
+    border-width: 4px 4px 4px 6px;
+    border-color: transparent transparent transparent $color-grey-light-2;
+    transform: translate(3px, 0px);
+  }
+}
+
+.rdrWeekDays {
+  padding: 0 0.833em;
+}
+
+.rdrMonth {
+  padding: 0 0.833em 1.666em 0.833em;
+  .rdrWeekDays {
+    padding: 0;
+  }
+}
+
+.rdrMonths.rdrMonthsVertical .rdrMonth:first-child .rdrMonthName {
+  display: none;
+}
+
+.rdrWeekDay {
+  font-weight: 400;
+  line-height: 2.667em;
+  color: $color-grey-light-3;
+}
+
+.rdrDay {
+  background: transparent;
+  user-select: none;
+  border: 0;
+  padding: 0;
+  line-height: 3em;
+  height: 3em;
+  text-align: center;
+  color: $color-grey-light-2;
+  &:focus {
+    outline: 0;
+  }
+}
+
+.rdrDayNumber {
+  outline: 0;
+  font-weight: 300;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  top: 5px;
+  bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rdrDayToday .rdrDayNumber span {
+  color: $color-grey-dark-1;
+  font-weight: 600;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: $color-primary;
+  }
+}
+
+.rdrDay .rdrDayNumber > span {
+  color: $color-grey-light-2;
+}
+
+.rdrDayToday:not(.rdrDayPassive) {
+  .rdrInRange,
+  .rdrStartEdge,
+  .rdrEndEdge,
+  .rdrSelected {
+    & ~ .rdrDayNumber span:after {
+      background: $color-black;
+    }
+  }
+}
+
+.rdrDay:not(.rdrDayPassive) {
+  .rdrInRange,
+  .rdrStartEdge,
+  .rdrEndEdge,
+  .rdrSelected {
+    & ~ .rdrDayNumber {
+      span {
+        color: $color-grey-dark-1;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.rdrSelected,
+.rdrInRange,
+.rdrStartEdge,
+.rdrEndEdge {
+  background: $color-primary;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+}
+
+.rdrSelected {
+  left: 2px;
+  right: 2px;
+}
+
+.rdrStartEdge {
+  border-top-left-radius: 1.042em;
+  border-bottom-left-radius: 1.042em;
+  left: 2px;
+}
+
+.rdrEndEdge {
+  border-top-right-radius: 1.042em;
+  border-bottom-right-radius: 1.042em;
+  right: 2px;
+}
+
+.rdrSelected {
+  border-radius: 1.042em;
+}
+
+.rdrDayStartOfMonth,
+.rdrDayStartOfWeek {
+  .rdrInRange,
+  .rdrEndEdge {
+    border-top-left-radius: 1.042em;
+    border-bottom-left-radius: 1.042em;
+    left: 2px;
+  }
+}
+
+.rdrDayEndOfMonth,
+.rdrDayEndOfWeek {
+  .rdrInRange,
+  .rdrStartEdge {
+    border-top-right-radius: 1.042em;
+    border-bottom-right-radius: 1.042em;
+    right: 2px;
+  }
+}
+
+.rdrDayStartOfMonth,
+.rdrDayStartOfWeek {
+  .rdrDayInPreview,
+  .rdrDayEndPreview {
+    border-top-left-radius: 1.333em;
+    border-bottom-left-radius: 1.333em;
+    border-left-width: 1px;
+    left: 0px;
+  }
+}
+
+.rdrDayEndOfMonth,
+.rdrDayEndOfWeek {
+  .rdrDayInPreview,
+  .rdrDayStartPreview {
+    border-top-right-radius: 1.333em;
+    border-bottom-right-radius: 1.333em;
+    border-right-width: 1px;
+    right: 0px;
+  }
+}
+
+.rdrDayStartPreview,
+.rdrDayInPreview,
+.rdrDayEndPreview {
+  background: rgba(255, 255, 255, 0.09);
+  position: absolute;
+  top: 3px;
+  left: 0px;
+  right: 0px;
+  bottom: 3px;
+  pointer-events: none;
+  border: 0px solid $color-primary;
+  z-index: 1;
+}
+
+.rdrDayStartPreview {
+  border-top-width: 1px;
+  border-left-width: 1px;
+  border-bottom-width: 1px;
+  border-top-left-radius: 1.333em;
+  border-bottom-left-radius: 1.333em;
+  left: 0px;
+}
+
+.rdrDayInPreview {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
+.rdrDayEndPreview {
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-top-right-radius: 1.333em;
+  border-bottom-right-radius: 1.333em;
+  right: 2px;
+  right: 0px;
+}
+
+.rdrDefinedRangesWrapper {
+  font-size: 12px;
+  width: 226px;
+  border-right: solid 1px $color-grey-dark-4;
+  background: $color-grey-dark-2;
+  .rdrStaticRangeSelected {
+    font-weight: 600;
+
+    & .rdrStaticRangeLabel {
+      color: $color-primary;
+    }
+  }
+}
+
+.rdrStaticRange {
+  border: 0;
+  cursor: pointer;
+  display: block;
+  outline: 0;
+  border-bottom: 1px solid $color-grey-dark-4;
+  padding: 0;
+  background: $color-grey-dark-2;
+  &:hover,
+  &:focus {
+    .rdrStaticRangeLabel {
+      background: $color-grey-dark-3;
+    }
+  }
+}
+
+.rdrStaticRangeLabel {
+  color: $color-grey-light-2;
+  display: block;
+  outline: 0;
+  line-height: 18px;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+.rdrInputRanges {
+  padding: 10px 0;
+}
+
+.rdrInputRange {
+  align-items: center;
+  padding: 5px 20px;
+}
+
+.rdrInputRangeInput {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 4px;
+  text-align: center;
+  background-color: $color-grey-dark-3;
+  border: solid 1px $color-grey-dark-4;
+  margin-right: 10px;
+  color: $color-grey-light-3;
+  &:focus,
+  &:hover {
+    border-color: $color-grey-light-4;
+    outline: 0;
+    color: $color-grey-light-2;
+  }
+}
+
+.rdrCalendarWrapper:not(.rdrDateRangeWrapper)
+  .rdrDayHovered
+  .rdrDayNumber:after {
+  content: "";
+  border: 1px solid currentColor;
+  border-radius: 1.333em;
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  left: 0px;
+  right: 0px;
+  background: transparent;
+}
+
+.rdrDayPassive {
+  pointer-events: none;
+  .rdrDayNumber span {
+    color: $color-grey-light-4;
+  }
+  .rdrInRange,
+  .rdrStartEdge,
+  .rdrEndEdge,
+  .rdrSelected,
+  .rdrDayStartPreview,
+  .rdrDayInPreview,
+  .rdrDayEndPreview {
+    display: none;
+  }
+}
+
+.rdrDayDisabled {
+  background-color: $color-grey-dark-2;
+  .rdrDayNumber span {
+    color: $color-grey-light-4;
+  }
+  .rdrInRange,
+  .rdrStartEdge,
+  .rdrEndEdge,
+  .rdrSelected,
+  .rdrDayStartPreview,
+  .rdrDayInPreview,
+  .rdrDayEndPreview {
+    filter: grayscale(100%) opacity(60%);
+  }
+}
+
+.rdrMonthName {
+  text-align: left;
+  font-weight: 600;
+  color: $color-grey-light-3;
+  padding: 0.833em;
+}

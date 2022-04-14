@@ -1,0 +1,184 @@
+.dropdown {
+  position: relative;
+
+  // Common styles
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 5.7rem;
+    right: 0;
+    z-index: 50;
+    padding: 1rem 0;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+    background-color: $color-grey-dark-2;
+    border-radius: $default-border-radius;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.2s, transform 0.7s;
+    box-shadow: 0px 5px 5px -3px rgba($color-black, 0.3),
+      0px 8px 10px 1px rgba($color-black, 0.18),
+      0px 3px 14px 2px rgba($color-black, 0.16);
+
+    &--active {
+      opacity: 1;
+      transform: scale(1);
+      transition: all 0.2s;
+
+      & a:link,
+      & a:visited {
+        color: $color-grey-light-2;
+        text-decoration: none;
+      }
+    }
+
+    &--smaller {
+      max-height: 40vh;
+    }
+  }
+
+  &__item {
+    color: transparent;
+    text-decoration: none;
+    padding: 1rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    background-color: rgba($color-black, 0);
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: rgba($color-black, 0.2);
+    }
+
+    &:active {
+      background-color: rgba($color-black, 0.4);
+    }
+  }
+
+  &__content--active > &__item {
+    color: $color-grey-light-2;
+  }
+
+  // Standard dropdown
+  &__content-std {
+    max-width: 30rem;
+  }
+
+  // Notification dropdown
+  &__content-not {
+    width: 32rem;
+  }
+
+  &__item-not {
+    &:not(:last-child) {
+      border-bottom: solid 1px $color-grey-dark-3;
+    }
+  }
+
+  &__item-not-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+  }
+
+  &__item-not-content {
+    font-size: 1.3rem;
+    color: transparent;
+    white-space: normal;
+    margin-bottom: 0.5rem;
+  }
+
+  &__item-not-date {
+    font-size: 1.1rem;
+    color: transparent;
+    white-space: normal;
+    margin-bottom: 0.5rem;
+  }
+
+  &__content-not--active &__item-not-content,
+  &__content-not--active &__item-not-date {
+    color: $color-grey-light-3;
+  }
+
+  &__content-right {
+    left: 0;
+  }
+
+  // Select menu dropdown
+  &__content-sel {
+    top: 4rem;
+    right: 0;
+    min-width: 20rem;
+    max-width: 30rem;
+  }
+
+  // Select menu dropdown
+  &__content-sel-right {
+    top: 4rem;
+    left: 0;
+    min-width: 20rem;
+    max-width: 30rem;
+  }
+
+  &__item-sel {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  // Popover dropdown
+  &__content-pop {
+    top: 4rem;
+    right: 0;
+    width: 30rem;
+    padding: 2rem;
+
+    @include respond(bp700) {
+      width: 25rem;
+    }
+  }
+
+  // Popover dropdown positioned left to right
+  &__content-pop-right {
+    top: 4rem;
+    left: 0;
+    width: 30rem;
+    padding: 2rem;
+
+    @include respond(bp700) {
+      width: 25rem;
+    }
+  }
+
+  // Dropdown for date range component
+  &__content-date-range {
+    top: 4rem;
+    right: -155px;
+    width: 338px;
+    padding: 0;
+  }
+
+  // Dropdown for date range two categories
+  &__content-date-range-two-cat {
+    top: 4rem;
+    right: -125px;
+    width: 338px;
+    padding: 0;
+  }
+
+  // Dropdown for value range form
+  &__content-value-range {
+    top: 4rem;
+    right: -155px;
+    width: 360px;
+    padding: 3rem 2rem 0;
+    overflow-y: visible;
+
+    @include respond(bp600) {
+      right: -120px;
+      width: 280px;
+    }
+  }
+}

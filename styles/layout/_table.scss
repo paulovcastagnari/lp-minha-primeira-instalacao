@@ -1,0 +1,283 @@
+.table {
+  position: relative;
+  display: grid;
+  grid-template-columns: 120rem;
+  background-color: $color-grey-dark-2;
+  padding: 1rem 0;
+  border-radius: $default-border-radius;
+  box-shadow: $default-box-shadow;
+  margin: 0 4rem 5rem;
+
+  @include respond(bp1600) {
+    grid-template-columns: 80rem;
+  }
+
+  @include respond(bp1200) {
+    grid-template-columns: 55rem;
+  }
+
+  @include respond(bp900) {
+    grid-template-columns: 65rem;
+  }
+
+  @include respond(bp600) {
+    grid-template-columns: 37rem;
+  }
+
+  &--empty {
+    @include center-xy-axis-horizontal;
+  }
+
+  &__item-container {
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-grey-dark-3;
+    }
+
+    &--is-dragging {
+      &:not(:last-child) {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(30rem, 1fr) max-content;
+    align-items: center;
+    padding: 2rem;
+    margin: 0 2rem;
+    background-color: $color-grey-dark-2;
+    border-radius: $default-border-radius;
+    transition: background-color 0.2s;
+    grid-gap: 2rem;
+
+    &--is-dragging {
+      background-color: $color-grey-dark-3;
+    }
+
+    @include respond(bp1200) {
+      grid-template-columns: max-content;
+    }
+
+    @include respond(bp900) {
+      grid-template-columns: minmax(30rem, 1fr) max-content;
+    }
+
+    @include respond(bp600) {
+      grid-template-columns: max-content;
+    }
+
+    &--alt-respond {
+      @include respond(bp1200) {
+        grid-template-columns: minmax(20rem, 1fr) max-content;
+      }
+
+      @include respond(bp900) {
+        grid-template-columns: minmax(30rem, 1fr) max-content;
+      }
+
+      @include respond(bp600) {
+        grid-template-columns: minmax(20rem, 1fr) max-content;
+      }
+    }
+  }
+
+  &__item-title {
+    font-size: 1.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include respond(bp1200) {
+      font-size: 1.5rem;
+      max-width: 40rem;
+    }
+
+    @include respond(bp600) {
+      max-width: 20rem;
+    }
+  }
+
+  &__item-content {
+    margin-top: 0.5rem;
+    font-weight: 300;
+    font-size: 1.7rem;
+    max-width: 80rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &--show-all {
+      white-space: normal;
+      overflow: visible;
+    }
+
+    @include respond(bp1600) {
+      max-width: 45rem;
+    }
+
+    @include respond(bp1200) {
+      font-size: 1.5rem;
+      max-width: 35rem;
+    }
+
+    @include respond(bp600) {
+      max-width: 20rem;
+    }
+  }
+
+  &__item-stats {
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    grid-gap: 0 1rem;
+
+    &--less-spaced {
+      grid-gap: 0 0.75rem;
+    }
+  }
+
+  &__item-stat {
+    font-weight: 300;
+    font-size: 1.7rem;
+    max-width: 50rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include respond(bp1200) {
+      font-size: 1.5rem;
+      max-width: 40rem;
+    }
+
+    @include respond(bp600) {
+      max-width: 20rem;
+    }
+
+    &--bold {
+      font-weight: 700;
+    }
+  }
+
+  &__item-actions {
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    grid-gap: 0 1rem;
+  }
+
+  &__item-action {
+    & svg {
+      transition: transform 0.3s;
+    }
+
+    &--open {
+      & svg {
+        transition: transform 0.3s;
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &__secondary {
+    background-color: $color-grey-dark-3;
+
+    &--is-dragging {
+      background-color: transparent;
+    }
+  }
+
+  &__secondary-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(30rem, 1fr) max-content;
+    align-items: center;
+    padding: 2.5rem 2rem;
+    margin: 0 2rem;
+    border-radius: $default-border-radius;
+    background-color: $color-grey-dark-3;
+    transition: background-color 0.2s;
+    border-bottom: 1px solid $color-grey-dark-4;
+    grid-gap: 2rem;
+
+    &--no-border {
+      border-bottom: none;
+    }
+
+    &--is-dragging {
+      background-color: $color-grey-dark-4;
+      border-bottom: none;
+    }
+
+    &--info-only {
+      grid-template-columns: max-content;
+      grid-row-gap: 0.4rem;
+    }
+
+    @include respond(bp600) {
+      grid-template-columns: max-content;
+    }
+  }
+
+  &__secondary-item-title {
+    font-size: 1.5rem;
+    font-family: $font-primary;
+    font-weight: 700;
+
+    &--highlight {
+      color: $color-primary-dark;
+    }
+
+    @include respond(bp1200) {
+      font-size: 1.3rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 20rem;
+    }
+  }
+
+  &__secondary-item-stats {
+    margin-top: 0.5rem;
+    font-weight: 300;
+    font-size: 1.4rem;
+
+    @include respond(bp1200) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__secondary-item-stat {
+    &--bold {
+      font-weight: 700;
+    }
+
+    &--capitalized {
+      text-transform: capitalize;
+    }
+  }
+
+  &__secondary-item-actions {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    grid-gap: 0 1rem;
+
+    &--three-actions {
+      grid-template-columns: repeat(3, max-content);
+    }
+  }
+
+  &__secondary-add-btn-container {
+    @include center-xy-axis-horizontal;
+    width: 100%;
+    padding: 2rem 0;
+    background-color: $color-grey-dark-3;
+  }
+
+  &__item-form-container {
+    margin: 3rem auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+  }
+}

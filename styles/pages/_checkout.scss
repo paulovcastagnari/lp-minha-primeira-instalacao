@@ -1,0 +1,114 @@
+.checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto 5rem;
+  width: 50%;
+
+  @include respond(bp1500) {
+    width: 65%;
+  }
+
+  @include respond(bp1000) {
+    width: 80%;
+  }
+
+  @include respond(bp600) {
+    width: 90%;
+  }
+
+  &__banner {
+    border-radius: $default-border-radius;
+    margin: 3rem 0;
+    width: 100%;
+    height: auto;
+    box-shadow: $default-box-shadow;
+  }
+
+  &__form-payment-choice {
+    width: 100%;
+    margin: 0.75rem 0 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(max-content, 1fr));
+    justify-content: center;
+    justify-items: center;
+    grid-gap: 1.5rem;
+
+    @include respond(bp800) {
+      grid-template-columns: repeat(2, minmax(max-content, 1fr));
+    }
+
+    @include respond(bp500) {
+      flex-direction: column;
+    }
+  }
+
+  // &__form-payment-choice-btn {
+  //   &:not(:last-child) {
+  //     margin-right: 2rem;
+  //   }
+
+  //   @include respond(bp500) {
+  //     &:not(:last-child) {
+  //       margin-right: 0;
+  //       margin-bottom: 2rem;
+  //     }
+  //   }
+  // }
+
+  &__credit-card-container {
+    margin-bottom: 3.5rem;
+    @include respond(bp600) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__products {
+    width: 100%;
+  }
+
+  &__total {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 2rem 0 3rem;
+
+    @include respond(bp1500) {
+      width: 100%;
+    }
+
+    @include respond(bp500) {
+      justify-content: center;
+    }
+  }
+
+  &__total-label {
+    display: inline-block;
+    font-size: 2.75rem;
+    margin-right: 6rem;
+
+    @include respond(bp500) {
+      font-size: 2rem;
+    }
+  }
+
+  &__total-price-int {
+    font-size: 2.75rem;
+    margin-right: 0.3rem;
+
+    @include respond(bp500) {
+      font-size: 2rem;
+    }
+  }
+
+  &__warranty {
+    margin-top: 3rem;
+    width: 50rem;
+    height: auto;
+
+    @include respond(bp500) {
+      width: 35rem;
+    }
+  }
+}

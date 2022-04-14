@@ -1,0 +1,154 @@
+.checkbox {
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: transparent;
+  border-radius: 50%;
+  border: solid 2px $color-primary-light;
+  position: relative;
+  transition: all 0.2s;
+  @include center-xy-axis-horizontal;
+
+  &__container {
+    cursor: pointer;
+    padding: 1rem 1.5rem 1rem 1rem;
+
+    &--small {
+      padding: 0.5rem 0.8rem;
+    }
+
+    &--uncheckable {
+      cursor: default;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    background-color: $color-grey-dark-1;
+    height: 3px;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.2s;
+  }
+
+  &::before {
+    width: 1.2rem;
+    transform: rotate(-45deg);
+    left: 0.2rem;
+    top: 0.6rem;
+  }
+
+  &::after {
+    width: 0.6rem;
+    transform: rotate(45deg);
+    right: 0.8rem;
+    top: 0.7rem;
+  }
+
+  @include respond(bp900) {
+    &::after {
+      right: 0.7rem;
+    }
+  }
+
+  &--uncheckable {
+    border: solid 2px $color-grey-dark-5;
+  }
+
+  &--checked {
+    background-color: $color-primary-light;
+    border: solid 2px $color-primary-light;
+
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &--checked#{&}--uncheckable {
+    background-color: $color-grey-dark-4;
+    border: solid 2px $color-grey-dark-4;
+  }
+
+  &--test {
+    background-color: transparent;
+
+    &::before {
+      background-color: $color-primary;
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+    }
+
+    &::after {
+      opacity: 0;
+    }
+  }
+
+  &--incorrect {
+    border: solid 2px $color-grey-dark-4;
+    background-color: transparent;
+
+    &::before {
+      background-color: $color-grey-dark-4;
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+    }
+
+    &::after {
+      opacity: 0;
+    }
+  }
+
+  &--test-finished {
+    border: solid 2px $color-grey-dark-4;
+  }
+
+  &--small {
+    background-color: transparent;
+    width: 1.6rem;
+    height: 1.6rem;
+
+    &::before {
+      background-color: $color-primary;
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+    }
+
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+.checkbox-loading {
+  padding: 1rem 1.5rem 1rem 1rem;
+
+  &__icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    @include center-xy-axis-horizontal;
+  }
+
+  & > &__icon {
+    & svg {
+      font-size: 2.2rem;
+      margin-right: 0;
+      color: $color-primary;
+    }
+  }
+}

@@ -1,0 +1,235 @@
+.card {
+  // FUNCTIONALITY
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 40rem;
+
+  &__side {
+    height: 40rem;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: $default-border-radius;
+    overflow: hidden;
+    box-shadow: $default-box-shadow;
+
+    &--front {
+      background-color: $color-grey-dark-2;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+
+      background-image: linear-gradient(
+        to right bottom,
+        $color-primary-light,
+        $color-primary-dark
+      );
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  // FRONT SIDE STYLING
+  &__picture {
+    width: 34rem;
+    height: 29.75rem;
+    border-top-left-radius: $default-border-radius;
+    border-top-right-radius: $default-border-radius;
+  }
+
+  &__avatar {
+    width: 34rem;
+    height: 29.75rem;
+    @include center-xy-axis-horizontal;
+    background-image: url("../../public/card-user-background.png");
+    background-size: cover;
+  }
+
+  &__avatar-picture {
+    width: 20.2rem;
+    height: 20.2rem;
+    border-radius: 50%;
+  }
+
+  &__heading {
+    font-size: 2.4rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-grey-dark-1;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    background-image: linear-gradient(
+      to right bottom,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    background-clip: text;
+    color: transparent;
+    max-width: 32rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // BACk SIDE STYLING
+  &__close {
+    display: none;
+    color: $color-grey-dark-1;
+    position: absolute;
+    top: 0.7rem;
+    right: 1rem;
+    font-size: 4rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    line-height: 1;
+    padding: 0.2rem 0.8rem;
+    cursor: pointer;
+  }
+
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  &__secondary-ctas {
+    margin-top: 2rem;
+    @include center-xy-axis-horizontal;
+  }
+
+  &__secondary-cta {
+    &:not(:last-child) {
+      margin-right: 1.25rem;
+    }
+  }
+
+  &__price-box {
+    color: $color-grey-dark-1;
+    margin-bottom: 8rem;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    max-width: 32rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &--lowercase {
+      text-transform: lowercase;
+    }
+
+    &--capitalize {
+      text-transform: capitalize;
+    }
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    max-width: 32rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__mobile-cta-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  &__mobile-cta {
+    display: none;
+  }
+
+  @media only screen and (max-width: 50em), only screen and (hover: none) {
+    height: 47rem;
+
+    &__mobile-cta {
+      display: block;
+    }
+
+    &__close {
+      display: block;
+    }
+
+    &__side {
+      height: 47rem;
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    &:hover &__side--back {
+      transform: rotateY(180deg);
+    }
+
+    &--rotated &__side--front,
+    &--rotated:hover &__side--front {
+      transform: rotateY(-180deg);
+    }
+
+    &--rotated &__side--back,
+    &--rotated:hover &__side--back {
+      transform: rotateY(0);
+    }
+  }
+
+  &--cross-sell {
+    width: 25rem;
+    height: 31rem;
+
+    @include respond(bp800) {
+      height: 36rem;
+    }
+  }
+
+  &--cross-sell &__side {
+    width: 25rem;
+    height: 31rem;
+
+    @include respond(bp800) {
+      height: 36rem;
+    }
+  }
+
+  &--cross-sell &__picture {
+    width: 25rem;
+    height: auto;
+  }
+
+  &--cross-sell &__heading {
+    font-size: 1.8rem;
+  }
+
+  &--cross-sell &__price-value {
+    font-size: 4.5rem;
+  }
+}

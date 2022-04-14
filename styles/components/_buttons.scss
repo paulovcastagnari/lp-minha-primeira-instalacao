@@ -1,0 +1,840 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: $default-font-size;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+  }
+
+  &--high {
+    padding: 2.25rem 4rem;
+    font-size: 1.8rem;
+
+    @include respond(bp700) {
+      font-size: 1.5rem;
+      padding: 2.4rem 4rem;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &--sm-animation {
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+
+      &::after {
+        transform: scaleX(1.15) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.4);
+    background-color: $color-primary-dark;
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark-2;
+
+    &::after {
+      background-color: $color-white;
+    }
+
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 0.5rem 1rem rgba($color-black, 0.4);
+      background-color: $color-white;
+    }
+  }
+
+  &--grey {
+    background-color: $color-grey-dark-4;
+    color: $color-grey-light-1;
+
+    &::after {
+      background-color: $color-grey-dark-4;
+    }
+
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 0.5rem 1rem rgba($color-black, 0.4);
+      background-color: $color-grey-dark-4;
+    }
+  }
+
+  &--grey-light {
+    background-color: $color-grey-light-2;
+    color: $color-grey-dark-1;
+
+    &::after {
+      background-color: $color-grey-light-2;
+    }
+
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 0.5rem 1rem rgba($color-black, 0.4);
+      background-color: $color-grey-light-2;
+    }
+  }
+
+  &--yellow {
+    background-color: $color-primary;
+    color: $color-grey-dark-1;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
+  &--wide {
+    width: 100%;
+  }
+
+  &--small {
+    &,
+    &:link,
+    &:visited {
+      padding: 0.9rem 2rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  &--icon {
+    &,
+    &:link,
+    &:visited {
+      padding: 0;
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 50%;
+      @include center-xy-axis-horizontal;
+    }
+
+    & svg {
+      font-size: 2.2rem;
+    }
+  }
+
+  &--icon-extra-small {
+    &,
+    &:link,
+    &:visited {
+      padding: 0;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      @include center-xy-axis-horizontal;
+    }
+
+    & svg {
+      font-size: 1.85rem;
+    }
+  }
+
+  &--icon-medium {
+    &,
+    &:link,
+    &:visited {
+      padding: 0;
+      width: 5.25rem;
+      height: 5.25rem;
+      border-radius: 50%;
+      @include center-xy-axis-horizontal;
+    }
+
+    & svg {
+      font-size: 2.8rem;
+      color: $color-grey-dark-1;
+    }
+  }
+
+  &--icon-big {
+    &,
+    &:link,
+    &:visited {
+      padding: 0;
+      width: 5.75rem;
+      height: 5.75rem;
+      border-radius: 50%;
+      @include center-xy-axis-horizontal;
+    }
+
+    & svg {
+      font-size: 3.5rem;
+      color: $color-grey-dark-1;
+    }
+  }
+
+  &--icon-huge {
+    &,
+    &:link,
+    &:visited {
+      padding: 0;
+      width: 7rem;
+      height: 7rem;
+      border-radius: 50%;
+      @include center-xy-axis-horizontal;
+    }
+
+    & svg {
+      font-size: 3.8rem;
+      color: $color-grey-dark-1;
+    }
+  }
+
+  &--icon-blue {
+    & svg {
+      color: $color-fourth;
+    }
+  }
+
+  &--square {
+    &,
+    &:link,
+    &:visited {
+      border-radius: $default-border-radius;
+    }
+
+    &::after {
+      border-radius: $default-border-radius;
+    }
+  }
+
+  &:disabled {
+    background-color: $color-grey-dark-3;
+    cursor: default;
+
+    &::after {
+      display: none;
+    }
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    & svg {
+      color: $color-grey-dark-4;
+    }
+  }
+}
+
+.btn-icon {
+  &,
+  &:link,
+  &:visited {
+    position: relative;
+    width: 4.5rem;
+    height: 4.5rem;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    color: $color-grey-light-2;
+    transition: all 0.2s;
+    @include center-xy-axis-horizontal;
+  }
+
+  &:hover {
+    background-color: rgba($color-black, 0.15);
+  }
+
+  &:active {
+    background-color: rgba($color-black, 0.3);
+    color: $color-grey-light-1;
+  }
+
+  &__notification {
+    font-size: 1rem;
+    line-height: 1;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    background-color: $color-secondary;
+    color: $color-white;
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & svg {
+    font-size: 2.2rem;
+  }
+
+  &--medium {
+    width: 3rem;
+    height: 3rem;
+
+    & svg {
+      font-size: 2rem;
+    }
+  }
+
+  &--small {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    & svg {
+      font-size: 1.5rem;
+    }
+  }
+
+  &--large {
+    width: 5.5rem;
+    height: 5.5rem;
+
+    & svg {
+      font-size: 3rem;
+    }
+  }
+
+  &--yellow {
+    &:hover,
+    &:active {
+      background-color: rgba($color-black, 0);
+      color: $color-primary;
+    }
+  }
+
+  &--yellow-active {
+    color: $color-primary;
+  }
+
+  &:disabled {
+    color: $color-grey-light-4;
+    cursor: default;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    &:active {
+      background-color: transparent;
+    }
+  }
+
+  &--light {
+    color: $color-grey-dark-2;
+
+    &:hover {
+      background-color: rgba($color-white, 0.2);
+      color: $color-grey-dark-1;
+    }
+
+    &:active {
+      background-color: rgba($color-white, 0.35);
+      color: $color-grey-dark-1;
+    }
+  }
+}
+
+.btn-icon-text {
+  &,
+  &:link,
+  &:visited {
+    @include center-xy-axis-horizontal;
+    padding: 1rem 1.5rem 1rem 1.2rem;
+    cursor: pointer;
+    border: none;
+    color: $color-grey-light-2;
+    border-radius: $default-border-radius;
+    transition: all 0.2s;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    background-color: rgba($color-black, 0.15);
+    color: $color-grey-light-1;
+
+    & svg {
+      color: $color-grey-light-1;
+    }
+  }
+
+  &:active {
+    background-color: rgba($color-black, 0.3);
+    color: $color-grey-light-1;
+
+    & svg {
+      color: $color-grey-light-1;
+    }
+  }
+
+  & svg {
+    color: $color-grey-light-2;
+    margin-right: 0.5rem;
+    font-size: 2.2rem;
+  }
+
+  &--app-bar {
+    padding: 0.8rem 1.5rem 1rem 0.8rem;
+
+    @include respond(bp900) {
+      width: 4.5rem;
+      height: 4.5rem;
+      padding: 0;
+      border-radius: 50%;
+    }
+
+    & svg {
+      margin-right: 0;
+    }
+  }
+
+  &--small {
+    font-size: 1.2rem;
+
+    & svg {
+      font-size: 2rem;
+    }
+  }
+
+  &--disabled {
+    color: $color-grey-light-4;
+    cursor: default;
+
+    & svg {
+      color: $color-grey-light-4;
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: $color-grey-light-4;
+
+      & svg {
+        color: $color-grey-light-4;
+      }
+    }
+
+    &:active {
+      background-color: transparent;
+      color: $color-grey-light-4;
+
+      & svg {
+        color: $color-grey-light-4;
+      }
+    }
+  }
+}
+
+.btn-select {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    border-radius: $default-border-radius;
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: 1px solid $color-grey-light-3;
+    cursor: pointer;
+    background-color: transparent;
+    color: $color-grey-light-3;
+    @include center-xy-axis-horizontal;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    background-color: rgba($color-white, 0.07);
+    color: $color-grey-light-2;
+    border-color: $color-grey-light-2;
+  }
+
+  & svg {
+    font-size: 2rem;
+    margin-left: 1rem;
+    transform: rotate(0);
+    transition: transform 0.2s;
+  }
+
+  &--active {
+    & svg {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &--disabled {
+    &,
+    &:link,
+    &:visited {
+      border: 1px solid $color-grey-dark-4;
+      cursor: default;
+      color: $color-grey-dark-4;
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: $color-grey-dark-4;
+      border-color: $color-grey-dark-4;
+    }
+  }
+}
+
+.btn-text {
+  &,
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-grey-light-2;
+    text-decoration: none;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    text-transform: uppercase;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 0.9rem;
+    position: relative;
+    transition: all 0.2s;
+    @include center-xy-axis-horizontal;
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  &:active {
+    color: $color-primary-dark;
+  }
+
+  &--large {
+    font-size: 1.3rem;
+  }
+
+  & svg {
+    transition: transform 0.3s;
+    position: absolute;
+    right: -0.15rem;
+  }
+
+  &--icon-left {
+    & svg {
+      left: -0.15rem;
+    }
+  }
+
+  &--active {
+    color: $color-primary;
+
+    & svg {
+      transform: rotate(-180deg);
+    }
+
+    &:disabled {
+      color: $color-grey-light-4;
+    }
+  }
+
+  &:disabled {
+    color: $color-grey-light-4;
+    cursor: default;
+
+    &:hover {
+      color: $color-grey-light-4;
+    }
+
+    &:active {
+      color: $color-grey-light-4;
+    }
+  }
+}
+
+.btn-icon-outlined {
+  &,
+  &:link,
+  &:visited {
+    font-size: 1.5rem;
+    padding: 2rem 1rem;
+    background-color: transparent;
+    color: $color-grey-light-3;
+    cursor: pointer;
+    border-radius: $default-border-radius;
+    text-transform: uppercase;
+    width: 100%;
+    border: 2px solid $color-grey-light-3;
+    transition: all 0.2s;
+    @include center-xy-axis-horizontal;
+  }
+
+  & svg {
+    font-size: 3.5rem;
+    margin-right: 1rem;
+  }
+
+  &--active {
+    color: $color-primary-light;
+    border: 2px solid $color-primary-light;
+
+    & svg {
+      color: $color-primary-light;
+      transition: color 0.2s;
+    }
+  }
+
+  @include respond(bp500) {
+    width: 100%;
+  }
+}
+
+.btn-back {
+  position: fixed;
+  left: 28rem;
+  bottom: 3rem;
+
+  @include respond(bp900) {
+    left: 2rem;
+    bottom: 2rem;
+  }
+}
+
+.metric-btn {
+  &,
+  &:link,
+  &:visited {
+    width: 30rem;
+    height: 8rem;
+    border-radius: $default-border-radius;
+    background-color: $color-grey-dark-3;
+    border: none;
+    cursor: pointer;
+    color: $color-grey-light-2;
+    @include center-xy-axis-horizontal;
+    transition: background-color 0.2s, color 0.2s;
+    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 26% 50%, 0% 0%);
+    position: relative;
+
+    @include respond(bp1200) {
+      width: 20rem;
+      height: 6.67rem;
+    }
+
+    @include respond(bp700) {
+      width: 9.5rem;
+      height: 4rem;
+    }
+  }
+
+  &--1 {
+    &,
+    &:link,
+    &:visited {
+      clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0 50%, 0% 0%);
+      position: relative;
+      left: 6rem;
+
+      @include respond(bp1200) {
+        left: 3rem;
+      }
+
+      @include respond(bp700) {
+        left: 2.25rem;
+      }
+    }
+  }
+
+  &--2 {
+    &,
+    &:link,
+    &:visited {
+      position: relative;
+      left: 2rem;
+
+      @include respond(bp1200) {
+        left: 1rem;
+      }
+
+      @include respond(bp700) {
+        left: 0.75rem;
+      }
+    }
+  }
+
+  &--3 {
+    &,
+    &:link,
+    &:visited {
+      position: relative;
+      right: 2rem;
+
+      @include respond(bp1200) {
+        right: 1rem;
+      }
+
+      @include respond(bp700) {
+        right: 0.75rem;
+      }
+    }
+  }
+
+  &--4 {
+    &,
+    &:link,
+    &:visited {
+      position: relative;
+      right: 6rem;
+
+      @include respond(bp1200) {
+        right: 3rem;
+      }
+
+      @include respond(bp700) {
+        right: 2.25rem;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: $color-primary-dark;
+    color: $color-grey-dark-3;
+    box-shadow: $default-box-shadow;
+
+    & > .metric-btn__icon {
+      background-color: rgba($color-white, 0.5);
+    }
+  }
+
+  &:active {
+    background-color: $color-primary-light;
+  }
+
+  &--active {
+    background-color: $color-primary-light;
+    color: $color-grey-dark-3;
+    box-shadow: $default-box-shadow;
+
+    & > .metric-btn__icon {
+      background-color: rgba($color-white, 0.5);
+    }
+
+    &:hover {
+      background-color: $color-primary-light;
+    }
+  }
+
+  &__icon {
+    width: 5rem;
+    height: 5rem;
+    @include center-xy-axis-horizontal;
+    border-radius: 50%;
+    background-color: rgba($color-white, 0.2);
+    margin-right: 1.5rem;
+    transition: background-color 0.2s;
+
+    & svg {
+      font-size: 2.75rem;
+    }
+
+    &--1 {
+      position: relative;
+      right: 1rem;
+    }
+
+    &--2,
+    &--3,
+    &--4 {
+      position: relative;
+      left: 1rem;
+    }
+
+    @include respond(bp1200) {
+      width: 4rem;
+      height: 4rem;
+      margin-right: 0.8rem;
+
+      & svg {
+        font-size: 2rem;
+      }
+    }
+
+    @include respond(bp700) {
+      display: none;
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+    background-color: $color-grey-dark-2;
+    color: $color-grey-dark-4;
+
+    & > .metric-btn__icon {
+      background-color: rgba($color-white, 0.2);
+    }
+  }
+
+  &__title {
+    font-family: $font-title;
+    font-size: 2.15rem;
+
+    &--1 {
+      position: relative;
+      right: 1rem;
+    }
+
+    &--2,
+    &--3,
+    &--4 {
+      position: relative;
+      left: 1rem;
+
+      @include respond(bp700) {
+        left: 0.5rem;
+      }
+    }
+
+    @include respond(bp1200) {
+      font-size: 1.7rem;
+    }
+
+    @include respond(bp700) {
+      font-size: 1.6rem;
+    }
+  }
+}

@@ -1,0 +1,197 @@
+.side-nav {
+  font-size: 1.4rem;
+  list-style: none;
+  margin-top: 3.5rem;
+
+  &__secondary-items-container {
+    margin-bottom: 0.5rem;
+    background-color: $color-grey-dark-3;
+  }
+
+  &__item {
+    position: relative;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+
+    &--course {
+      &:not(:first-child) {
+        border-top: solid 1px $color-grey-dark-6;
+      }
+
+      &:not(:last-child) {
+        margin: 0rem;
+      }
+    }
+
+    &--secondary {
+      padding-left: 2rem;
+      font-size: 1.3rem;
+    }
+  }
+
+  &__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: $color-primary;
+    transform: scaleY(0);
+    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+      background-color 0.1s;
+  }
+
+  &__link,
+  &__link:link,
+  &__link:visited {
+    color: $color-grey-light-1;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem 3rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    transition: color 0.2s;
+  }
+
+  & svg {
+    font-size: 2rem;
+    margin-right: 2rem;
+  }
+
+  &__link {
+    &--secondary {
+      color: $color-grey-light-2;
+
+      & svg {
+        font-size: 1.8rem;
+        margin-right: 1.8rem;
+      }
+    }
+  }
+
+  &__title {
+    flex: 1;
+  }
+
+  &__drawer-icon {
+    display: flex;
+    align-items: center;
+
+    & svg {
+      margin-right: -0.5rem;
+      transition: all 0.3s;
+    }
+
+    &--active {
+      & svg {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &__link {
+    &--course {
+      text-transform: none;
+      font-weight: 700;
+      padding: 1.8rem 3rem;
+      width: 98%;
+
+      & svg {
+        margin: 0 0 0 auto;
+        font-size: 2.7rem;
+        transition: transform 0.2s;
+        align-self: start;
+      }
+    }
+  }
+
+  &__item:hover::before,
+  &__item--active::before {
+    transform: scaleY(1);
+    width: 100%;
+  }
+
+  &__item:active::before {
+    background-color: $color-primary-dark;
+  }
+
+  &__item:hover &__link,
+  &__item--active &__link {
+    color: $color-grey-dark-1;
+    transition: color 0.4s cubic-bezier(1, 0, 0, 1) 0.2s;
+  }
+
+  &__item--open &__link--course {
+    & svg {
+      transform: rotate(-180deg);
+    }
+  }
+
+  @include respond(bp900) {
+    &__item:hover::before {
+      transform: scaleY(0);
+      width: 3px;
+    }
+
+    &__item--active::before,
+    &__item--active:hover::before {
+      transform: scaleY(1);
+      width: 100%;
+    }
+
+    &__item:hover &__link {
+      color: $color-grey-light-2;
+    }
+
+    &__item--active &__link,
+    &__item--active:hover &__link {
+      color: $color-grey-dark-1;
+    }
+  }
+}
+
+.side-nav-secondary {
+  font-size: 1.3rem;
+  list-style: none;
+  background-color: $color-grey-dark-3;
+
+  &__link {
+    display: inline-block;
+    max-width: 96%;
+  }
+
+  &__item-container {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 2rem;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: rgba($color-black, 0.1);
+    }
+
+    &--active {
+      background-color: rgba($color-black, 0.1);
+      color: $color-primary-light;
+    }
+
+    &--active:hover {
+      background-color: rgba($color-black, 0.15);
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    padding: 1.8rem 0;
+  }
+}

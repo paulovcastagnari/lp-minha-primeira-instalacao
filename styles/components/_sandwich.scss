@@ -1,0 +1,76 @@
+.sandwich {
+  &,
+  &:link,
+  &:visited {
+    position: relative;
+    width: 4.5rem;
+    height: 4.5rem;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    color: $color-grey-light-2;
+    transition: all 0.2s;
+    display: none;
+
+    @include respond(bp900) {
+      @include center-xy-axis-horizontal;
+    }
+  }
+
+  &:hover {
+    background-color: rgba($color-black, 0.15);
+  }
+
+  &:active {
+    background-color: rgba($color-black, 0.3);
+    color: $color-grey-light-1;
+  }
+
+  &__icon {
+    position: relative;
+
+    &,
+    &::before,
+    &::after {
+      width: 2.58rem;
+      height: 2px;
+      background-color: $color-grey-light-2;
+      display: none;
+
+      @include respond(bp900) {
+        display: inline-block;
+      }
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      top: -0.6rem;
+    }
+
+    &::after {
+      top: 0.6rem;
+    }
+  }
+
+  &--active > &__icon {
+    background-color: transparent;
+  }
+
+  &--active > &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &--active > &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+}

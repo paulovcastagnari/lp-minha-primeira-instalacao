@@ -1,0 +1,142 @@
+.csp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    padding: 2rem 0 2.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-image: linear-gradient(
+      to right,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    color: $color-grey-dark-1;
+    box-shadow: $default-box-shadow;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.2rem;
+    font-size: 3rem;
+  }
+
+  &__subtitle {
+    display: inline-block;
+    font-size: 1.8rem;
+    max-width: 80%;
+
+    &--highlight {
+      font-weight: 700;
+    }
+
+    &--highlight-strong {
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: underline;
+    }
+  }
+
+  &__main {
+    width: 100%;
+    padding: 5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond(bp500) {
+      padding: 3rem 4rem;
+    }
+  }
+
+  &__main-title {
+    display: inline-block;
+    border-radius: $default-border-radius;
+    background-image: linear-gradient(
+      to right,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 4rem;
+    letter-spacing: 0.25rem;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__offer-copy {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: $color-grey-light-2;
+    max-width: 70rem;
+    text-align: center;
+    font-size: 1.8rem;
+  }
+
+  &__video-container {
+    position: relative;
+    width: 62rem;
+    max-width: 100%;
+    margin-top: 3rem;
+    box-shadow: $default-box-shadow;
+  }
+
+  &__offer-img {
+    width: 60rem;
+    max-width: 100%;
+    height: auto;
+    margin-top: 4rem;
+    align-self: center;
+  }
+
+  &__offer-price-value,
+  &__offer-price-txt {
+    text-align: center;
+    align-self: center;
+  }
+
+  &__offer-price-txt {
+    margin-top: 4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+
+  &__offer-price-value {
+    font-weight: 300;
+    font-size: 5rem;
+  }
+
+  &__cta-container {
+    margin-top: 3rem;
+    @include center-xy-axis-horizontal;
+    width: 100%;
+
+    @include respond(bp500) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+
+  &__cta {
+    &:not(:last-child) {
+      margin-right: 3.5rem;
+    }
+
+    @include respond(bp500) {
+      width: 80%;
+
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-top: 2.25rem;
+      }
+    }
+  }
+}

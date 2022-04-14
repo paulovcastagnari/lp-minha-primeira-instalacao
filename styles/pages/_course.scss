@@ -1,0 +1,174 @@
+.course {
+  display: grid;
+  grid-template-columns: [nav-start] 60rem [nav-end] repeat(
+      12,
+      [col-start] minmax(min-content, 1fr) [col-end]
+    );
+  grid-template-rows: 6rem min-content;
+
+  @include respond(bp1600) {
+    grid-template-columns: [nav-start] 50rem [nav-end] repeat(
+        12,
+        [col-start] minmax(min-content, 1fr) [col-end]
+      );
+  }
+
+  @include respond(bp1100) {
+    grid-template-columns: [nav-start] 38rem [nav-end] repeat(
+        12,
+        [col-start] minmax(min-content, 1fr) [col-end]
+      );
+  }
+
+  @include respond(bp900) {
+    grid-template-columns: repeat(
+      12,
+      [col-start] minmax(min-content, 1fr) [col-end]
+    );
+    grid-template-rows: min-content;
+  }
+
+  &__main-content {
+    grid-column: col-start 1 / -1;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 6rem);
+    overflow-y: auto;
+
+    @include respond(bp900) {
+      height: auto;
+      grid-row: 1 / -1;
+      margin-top: 6rem;
+    }
+  }
+
+  &__main-content-video-placeholder {
+    width: 100%;
+  }
+}
+
+.filters {
+  padding: 4rem 2rem;
+  width: 70%;
+  position: relative;
+  @include center-xy-axis-vertical;
+
+  @include respond(bp500) {
+    margin-top: 7rem;
+    padding: 1rem 2rem 3rem;
+  }
+}
+
+.comments {
+  width: 100%;
+  margin-top: 2rem;
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(
+    11,
+    [col-start] minmax(min-content, 15rem) [col-end]
+  );
+
+  &__title {
+    grid-column: 4 / 9;
+
+    &--centered {
+      text-align: center;
+    }
+
+    @include respond(bp400) {
+      text-align: center;
+    }
+  }
+}
+
+.comments-form,
+.lecture-evaluation,
+.lecture-archives {
+  padding: 5rem;
+  margin-bottom: 5rem;
+  width: 100%;
+  max-width: 70rem;
+  @include center-xy-axis-vertical;
+
+  @include respond(bp900) {
+    margin-bottom: 0;
+  }
+
+  @include respond(bp500) {
+    margin-top: 3rem;
+  }
+}
+
+.lecture-evaluation {
+  max-width: 60rem;
+}
+
+.lecture-archives {
+  &__grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 2rem 1rem;
+  }
+}
+
+.test {
+  @include center-xy-axis-vertical;
+  width: 70%;
+  margin: 4rem 0 5rem;
+
+  @include respond(bp1500) {
+    width: 85%;
+  }
+
+  &__questions-count {
+    position: relative;
+    bottom: 4rem;
+    align-self: center;
+    margin-bottom: 1rem;
+
+    &--started {
+      align-self: flex-start;
+      bottom: 0;
+    }
+  }
+
+  &__results {
+    @include center-xy-axis-vertical;
+    margin-top: 3rem;
+    color: $color-grey-light-2;
+  }
+
+  &__score-msg {
+    display: inline-block;
+    margin-right: 0.8rem;
+  }
+
+  &__score-number {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  &__score-scale {
+    font-size: 1.3rem;
+  }
+
+  &__feedback-msg {
+    display: inline-block;
+    color: $color-grey-light-1;
+    text-align: center;
+    font-weight: 300;
+  }
+
+  &__controls {
+    display: flex;
+    margin-top: 2rem;
+  }
+}
+
+.questions {
+  width: 100%;
+}

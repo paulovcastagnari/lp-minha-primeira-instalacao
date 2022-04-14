@@ -1,0 +1,126 @@
+.comment {
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  grid-gap: 2.5rem;
+  padding: 3rem 0;
+  color: $color-grey-light-2;
+  position: relative;
+
+  @include respond(bp1200) {
+    grid-gap: 1.5rem;
+  }
+
+  &--secondary {
+    margin-left: 8rem;
+    grid-gap: 0 0.5rem;
+    padding: 1rem 0;
+    grid-template-columns: min-content 1fr;
+
+    @include respond(bp1200) {
+      grid-gap: 0 0.5rem;
+    }
+
+    @include respond(bp900) {
+      margin-left: 7rem;
+    }
+  }
+
+  &--disabled {
+    color: $color-grey-light-4;
+  }
+
+  &__content {
+    padding-left: 1rem;
+  }
+
+  &__content-name-date {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    margin-bottom: 0.1rem;
+    width: 100%;
+  }
+
+  &__name,
+  &__surname {
+    color: $color-primary;
+    text-transform: capitalize;
+
+    &--disabled {
+      color: $color-grey-light-4;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+  }
+
+  &__content-preview {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    min-width: 100%;
+  }
+
+  &__content-buttons {
+    transform: translateY(1px);
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, max-content);
+    grid-gap: 0.5rem;
+    margin-left: -1.5rem;
+  }
+
+  &__actions {
+    &--secondary {
+      display: flex;
+      grid-row: 2 / 3;
+      grid-column: 2 / 3;
+      margin-left: 1.8rem;
+      position: relative;
+    }
+  }
+
+  &__action-group {
+    position: relative;
+    margin-bottom: 0.5rem;
+  }
+
+  &__action-count {
+    position: absolute;
+    left: -0.3rem;
+    top: -0.2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: all 0.2s;
+
+    &--secondary {
+      top: 0.6rem;
+      left: -0.7rem;
+    }
+
+    &--active {
+      color: $color-primary;
+    }
+
+    &--disabled {
+      color: $color-grey-light-4;
+    }
+  }
+
+  &__action-btn {
+    &--active {
+      color: $color-primary;
+    }
+  }
+
+  &__answer-form {
+    margin: 2rem auto 2rem;
+    width: 80%;
+    max-width: 48rem;
+
+    &--sec {
+      margin: 4rem auto 4rem;
+    }
+  }
+}

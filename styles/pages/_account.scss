@@ -1,0 +1,30 @@
+.account {
+  display: grid;
+  grid-template-columns: repeat(
+    12,
+    [col-start] minmax(min-content, 1fr) [col-end]
+  );
+  grid-template-rows: 6rem min-content;
+  grid-row-gap: 5rem;
+
+  @include respond(bp900) {
+    grid-template-rows: min-content;
+  }
+
+  &__main-content {
+    grid-column: 4 / 10;
+    margin-bottom: 5rem;
+
+    @include respond(bp1600) {
+      grid-column: 3 / 11;
+    }
+
+    @include respond(bp1100) {
+      grid-column: 2 / 12;
+    }
+
+    @include respond(bp900) {
+      margin-top: 11rem;
+    }
+  }
+}
