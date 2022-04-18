@@ -125,7 +125,7 @@ export const Index: NextPage = () => {
                   onClick={() => {
                     setActiveItem(0);
                   }}
-                  title="Pagamento com cartão de crédito"
+                  title="Instalação comercial"
                 >
                   <StoreRoundedIcon /> Comércio
                 </button>
@@ -136,7 +136,7 @@ export const Index: NextPage = () => {
                   onClick={() => {
                     setActiveItem(1);
                   }}
-                  title="Pagamento com Pix"
+                  title="Instalação residencial"
                 >
                   <HomeRoundedIcon /> Residência
                 </button>
@@ -147,7 +147,7 @@ export const Index: NextPage = () => {
                   onClick={() => {
                     setActiveItem(2);
                   }}
-                  title="Pagamento com Boleto"
+                  title="Instalação em zona rural"
                 >
                   <EcoRoundedIcon /> Rural
                 </button>
@@ -158,7 +158,7 @@ export const Index: NextPage = () => {
                   onClick={() => {
                     setActiveItem(3);
                   }}
-                  title="Pagamento com Boleto"
+                  title="Instalação industrial"
                 >
                   <BusinessRoundedIcon /> Indústria
                 </button>
@@ -198,7 +198,7 @@ export const Index: NextPage = () => {
                     id="email"
                     type="email"
                     label="E-mail"
-                    title="E-mail do seu cadastro. Para modificá-lo, contate nosso suporte."
+                    title="Insira o seu e-mail."
                     inputHandler={inputHandler}
                     validators={[VALIDATOR_EMAIL()]}
                     transform="LOWERCASE"
