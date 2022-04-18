@@ -13,6 +13,7 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.60",
     "@types/facebook-pixel": "0.0.24",
+    "@types/gtag.js": "0.0.10",
     "@types/react-credit-cards": "^0.8.1",
     "@types/react-date-range": "^1.4.3",
     "@types/uuid": "^8.3.4",
