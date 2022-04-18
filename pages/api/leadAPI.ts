@@ -1,4 +1,5 @@
 import { formatPhoneString } from "../../util/string/formatPhoneString";
+import { postFbCustomConversionEvent } from "../../util/other/postFbCustomConversionEvent";
 import { FormState } from "../../data/types";
 
 // GENERAL PROPS  /////////////////////////////////
@@ -53,5 +54,7 @@ export const sendLead = async (props: SendLeadProps) => {
       },
       true
     );
+
+    postFbCustomConversionEvent({ eventname: "ENVIOU-FORM-LEAD-SFV" });
   } catch (err) {}
 };

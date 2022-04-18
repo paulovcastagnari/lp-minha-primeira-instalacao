@@ -62,7 +62,7 @@ export const Index: NextPage = () => {
   };
 
   useEffect(() => {
-    postFbCustomConversionEvent({ eventname: "PGV-OSF" });
+    postFbCustomConversionEvent({ eventname: "PAGE-VIEW-LEAD-SFV" });
   }, []);
 
   return (
