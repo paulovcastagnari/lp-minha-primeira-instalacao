@@ -57,6 +57,6 @@ export const sendLead = async (props: SendLeadProps) => {
     );
 
     postFbCustomConversionEvent({ eventname: "ENVIOU-FORM-LEAD-SFV" });
-    // postGtagCustomConversion({ eventId: "" });
+    postGtagCustomConversion({ eventId: "AW-412710853/db1bCJvujbUDEMXv5cQB" });
   } catch (err) {}
 };

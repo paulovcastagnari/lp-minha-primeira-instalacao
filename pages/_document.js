@@ -22,7 +22,6 @@ class MyDocument extends Document {
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'AW-412710853');
-              gtag('event', 'conversion', {'send_to': 'AW-412710853/onBiCPXWuJkDEMXv5cQB'});
               `,
             }}
           />
