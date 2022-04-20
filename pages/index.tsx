@@ -94,7 +94,8 @@ export const Index: NextPage = () => {
           <span className="index__title-2">DE</span>
           <img
             src="energia-lucrativa-icon-512x512.png"
-            alt="Logo Viver de Fotovoltaico"
+            alt="Lucrasol Orçamento de Energia Solar Fotovoltaica"
+            title="Lucrasol Orçamento de Energia Solar Fotovoltaica"
             className="index__title-logo"
           />
           <h1 className="index__title-3 glow">ENERGIA SOLAR</h1>
@@ -260,6 +261,14 @@ export const Index: NextPage = () => {
                 {formState.isValid ? "Fazer orçamento" : "O que está faltando?"}
               </button>
             </form>
+          </div>
+          <div className="index__logo-img-bottom-container">
+            <img
+              src="/lucrasol-orcamento-energia-solar.png"
+              alt="Lucrasol Orçamento de Energia Solar Fotovoltaica"
+              title="Lucrasol Orçamento de Energia Solar Fotovoltaica"
+              className="index__logo-img-bottom"
+            />
           </div>
         </div>
       </main>
