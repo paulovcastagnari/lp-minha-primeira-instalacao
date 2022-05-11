@@ -264,7 +264,7 @@ export const Index: NextPage = () => {
           </div>
           <div className="index__logo-img-bottom-container">
             <img
-              src="/lucrasol-orcamento-energia-solar.png"
+              src="/logo-e4-original-min.png"
               alt="Lucrasol Orçamento de Energia Solar Fotovoltaica"
               title="Lucrasol Orçamento de Energia Solar Fotovoltaica"
               className="index__logo-img-bottom"
