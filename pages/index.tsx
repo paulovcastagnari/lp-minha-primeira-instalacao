@@ -68,8 +68,8 @@ export const Index: NextPage = () => {
   return (
     <div>
       <HtmlHead
-        title="Lucrasol - Orçamento de Energia Solar Fotovoltaica" // Mudar o nome depois de definido
-        description="Lucrasol: Faça já o seu orçamento de energia solar fotovoltaica e descubra quanto você irá economizar em sua conta de energia elétrica!" // Mudar o nome depois de definido
+        title="E4 Energia Solar - Orçamento de Energia Solar Fotovoltaica" // Mudar o nome depois de definido
+        description="E4 Energia Solar: Faça já o seu orçamento de energia solar fotovoltaica e descubra quanto você irá economizar em sua conta de energia elétrica!" // Mudar o nome depois de definido
         ogImageUrl="/og-image-energia-lucrativa.png"
       />
       <main className="index">
@@ -94,8 +94,8 @@ export const Index: NextPage = () => {
           <span className="index__title-2">DE</span>
           <img
             src="energia-lucrativa-icon-512x512.png"
-            alt="Lucrasol Orçamento de Energia Solar Fotovoltaica"
-            title="Lucrasol Orçamento de Energia Solar Fotovoltaica"
+            alt="E4 Energia Solar Orçamento de Energia Solar Fotovoltaica"
+            title="E4 Energia Solar Orçamento de Energia Solar Fotovoltaica"
             className="index__title-logo"
           />
           <h1 className="index__title-3 glow">ENERGIA SOLAR</h1>
@@ -265,8 +265,8 @@ export const Index: NextPage = () => {
           <div className="index__logo-img-bottom-container">
             <img
               src="/logo-e4-original-min.png"
-              alt="Lucrasol Orçamento de Energia Solar Fotovoltaica"
-              title="Lucrasol Orçamento de Energia Solar Fotovoltaica"
+              alt="E4 Energia Solar Orçamento de Energia Solar Fotovoltaica"
+              title="E4 Energia Solar Orçamento de Energia Solar Fotovoltaica"
               className="index__logo-img-bottom"
             />
           </div>

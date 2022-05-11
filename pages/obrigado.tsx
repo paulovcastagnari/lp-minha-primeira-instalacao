@@ -8,7 +8,7 @@ export const ThankYouPage: NextPage = () => {
   return (
     <Fragment>
       <HtmlHead
-        title="Lucrasol - Obrigado"
+        title="E4 Energia Solar - Obrigado"
         description="Um de nossos consultores entrará em contato com você em até 24 horas
         úteis."
         ogImageUrl="/og-image-energia-lucrativa.png"
