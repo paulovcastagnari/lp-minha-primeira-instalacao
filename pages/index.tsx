@@ -80,7 +80,6 @@ export const Login: NextPage = () => {
         description="Minha Primeira Instalação: Aprenda a Instalar um Sistema de Energia Solar e ganhe de R$ 4.600 a R$ 23.000 por mês!"
         ogImageUrl="/og-image-energia-lucrativa.png"
       />
-
       <main>
         <PopupError
           error={error}

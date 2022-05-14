@@ -2,12 +2,12 @@ import { Fragment } from "react";
 import type { NextPage } from "next";
 import Link from "next/link";
 
-import { HtmlHead } from "../components/meta/HtmlHead";
+import { HtmlHeadTyp } from "../components/meta/HtmlHeadTyp";
 
 export const ThankYouPage: NextPage = () => {
   return (
     <Fragment>
-      <HtmlHead
+      <HtmlHeadTyp
         title="E4 Energia Solar - Obrigado"
         description="Um de nossos consultores entrará em contato com você em até 24 horas
         úteis."
@@ -15,50 +15,38 @@ export const ThankYouPage: NextPage = () => {
       />
       <div className="typ">
         <div className="typ__header">
-          <h1 className="heading-primary typ__title">Obrigado</h1>
+          <h1 className="heading-primary typ__title">Atenção</h1>
+
           <p className="typ__subtitle">
-            Um de nossos consultores entrará em contato com você em até 24 horas
-            úteis. Veja abaixo os próximos passos da aquisição do seu sistema de
-            Energia Solar Fotovoltaica.
+            Clique no botão AZUL abaixo para fazer parte do nosso Grupo Vip,
+            confirmar a sua INSCRIÇÃO e receber as informações do nosso evento.
           </p>
         </div>
         <div className="typ__isnt">
-          <div className="typ__isnt-item">
-            <h2 className="typ__isnt-item-title">1 - Elaboração da proposta</h2>
-            <p className="typ__isnt-item-text">
-              Assim que entrarmos em contato, elaboraremos uma proposta
-              comercial para suprir o seu consumo de energia elétrica.
-            </p>
-          </div>
-          <div className="typ__isnt-item">
-            <h2 className="typ__isnt-item-title">2 - Aprovação da proposta</h2>
-            <p className="typ__isnt-item-text">
-              Você deverá analisar se o sistema proposto está de acordo com os
-              seus requisitos e aprovar a proposta ou solicitar modificações.
-            </p>
-          </div>
-          <div className="typ__isnt-item">
-            <h2 className="typ__isnt-item-title">3 - Visita técnica</h2>
-            <p className="typ__isnt-item-text">
-              Após aprovada a proposta, agendaremos uma visita ténica a fim de
-              realizar a análise do local de instalação.
-            </p>
-          </div>
-          <div className="typ__isnt-item">
-            <h2 className="typ__isnt-item-title">4 - Assinatura do contrato</h2>
-            <p className="typ__isnt-item-text">
-              Logo que Efetuada a análise do local de instalação, o contrato de
-              serviço deverá ser assinado para que a instalação do sistema
-              inicie.
-            </p>
-          </div>
+          <a
+            href="https://www.energiasolarlucrativa.com.br/mpi"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src="/botao-azul.png" className="typ__whatsapp" />
+          </a>
+          <h2 className="typ__isnt-item-title">Atenção</h2>
+          <p className="typ__isnt-item-text">
+            Atenção: Essa etapa é essencial para confirmar a sua inscrição! Na
+            próxima tela aperte em “Entrar no Grupo”
+          </p>
         </div>
+        !
         <div className="typ__cta">
-          <Link href="/">
+          <a
+            href="https://www.energiasolarlucrativa.com.br/mpi"
+            target="_blank"
+            rel="noreferrer"
+          >
             <button className="btn btn--yellow btn--wide btn--sm-animation">
-              Retornar à página anterior
+              Entrar no grupo
             </button>
-          </Link>
+          </a>
         </div>
       </div>
     </Fragment>

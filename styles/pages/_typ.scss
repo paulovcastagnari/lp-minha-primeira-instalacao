@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: $color-grey-dark-1;
+  min-height: 100vh;
 
   &__header {
     padding: 2rem 0 2.5rem;
@@ -19,6 +21,11 @@
     box-shadow: $default-box-shadow;
   }
 
+  &__whatsapp {
+    width: 100%;
+    max-width: 40rem;
+  }
+
   &__title {
     text-transform: uppercase;
     margin-bottom: 0.5rem;
@@ -28,7 +35,7 @@
 
   &__subtitle {
     display: inline-block;
-    font-size: 2rem;
+    font-size: 1.5rem;
     max-width: 80%;
   }
 
@@ -56,33 +63,17 @@
 
   &__isnt {
     max-width: 100rem;
-    padding: 7rem;
+    padding: 4rem 2rem;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 4rem 10rem;
-
-    @include respond(bp900) {
-      grid-gap: 4rem 6rem;
-    }
-
-    @include respond(bp700) {
-      padding: 6rem;
-      grid-gap: 4rem 6rem;
-    }
-
-    @include respond(bp600) {
-      grid-template-columns: 1fr;
-      grid-gap: 3rem 0;
-    }
-
-    @include respond(bp400) {
-      padding: 4rem;
-    }
+    grid-template-columns: 1fr;
+    // grid-gap: 0.5rem;
+    justify-items: center;
   }
 
   &__isnt-item-title,
   &__qr-code-title,
   &__bill-title {
+    margin-top: 2.5rem;
     display: inline-block;
     border-radius: $default-border-radius;
     background-image: linear-gradient(
@@ -102,6 +93,8 @@
     display: inline-block;
     margin-top: 1rem;
     color: $color-grey-light-2;
+    font-size: 1.5rem;
+    text-align: center;
 
     &--highlight {
       color: $color-primary-dark;
@@ -125,8 +118,7 @@
   }
 
   &__cta {
-    max-width: 100rem;
-    width: 100%;
+    max-width: 60rem;
     margin-bottom: 6rem;
     padding: 0 7rem;
 
@@ -135,7 +127,7 @@
     }
 
     @include respond(bp400) {
-      padding: 0 4rem;
+      padding: 0 2rem;
       margin-bottom: 5rem;
     }
   }

@@ -43,7 +43,7 @@ export const sendLead = async (props: SendLeadProps) => {
     );
 
     window.open(
-      "https://www.minhaprimeirainstalacao.com.br/obrigado/",
+      "https://www.minhaprimeirainstalacao.com.br/obrigado",
       "_blank"
     );
 
