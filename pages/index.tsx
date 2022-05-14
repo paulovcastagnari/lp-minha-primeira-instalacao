@@ -83,8 +83,8 @@ export const Login: NextPage = () => {
 
       <main>
         <PopupError
-          error="Minha Primeira Instalação: Aprenda a Instalar um Sistema de Energia Solar e ganhe de R$ 4.600 a R$ 23.000 por mês!"
-          active={true}
+          error={error}
+          active={!!error}
           closePopupHandler={clearError}
         />
         <div className="App">
