@@ -24,14 +24,14 @@
 
   &__content {
     position: relative;
-    padding: 4.5rem;
+    padding: 2.5rem;
     background-color: $color-grey-dark-2;
     border-radius: $default-border-radius;
     opacity: 0;
     transform: scale(0.25);
     transition: all 0.5s 0.2s;
     max-width: 90%;
-    min-width: 10rem;
+    min-width: 15rem;
     @include center-xy-axis-vertical;
   }
 
@@ -78,7 +78,7 @@
     position: absolute;
     top: 1rem;
     right: 1rem;
-    font-size: 3rem;
+    font-size: 2rem;
     text-decoration: none;
     display: block;
     transition: all 0.2s;

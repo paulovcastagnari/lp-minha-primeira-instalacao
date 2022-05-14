@@ -84,7 +84,7 @@ export const Login: NextPage = () => {
       <main>
         <PopupError
           error={error}
-          active={!!error}
+          active={true}
           closePopupHandler={clearError}
         />
         <div className="App">
