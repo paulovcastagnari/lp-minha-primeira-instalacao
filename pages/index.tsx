@@ -70,7 +70,7 @@ export const Login: NextPage = () => {
   }, [src]);
 
   const registerLeadHandler = () => {
-    sendLead({ sendRequest, formState, tag });
+    sendLead({ sendRequest, formState, tag, router });
   };
 
   return (

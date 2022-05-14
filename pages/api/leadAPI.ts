@@ -1,6 +1,7 @@
 import { formatPhoneString } from "../../util/string/formatPhoneString";
 import { postFbCustomConversionEvent } from "../../util/other/postFbCustomConversionEvent";
-import { postGtagCustomConversion } from "../../util/other/postGtagCustomConversion";
+import { NextRouter } from "next/router";
+
 import { FormState } from "../../data/types";
 
 // GENERAL PROPS  /////////////////////////////////
@@ -21,10 +22,11 @@ export interface FetchPropsNoAuth {
 interface SendLeadProps extends FetchPropsNoAuth {
   formState: FormState;
   tag: string;
+  router: NextRouter;
 }
 
 export const sendLead = async (props: SendLeadProps) => {
-  const { sendRequest, formState, tag } = props;
+  const { sendRequest, formState, tag, router } = props;
 
   try {
     await sendRequest(
@@ -42,13 +44,10 @@ export const sendLead = async (props: SendLeadProps) => {
       true
     );
 
-    window.open(
-      "https://www.minhaprimeirainstalacao.com.br/obrigado",
-      "_blank"
-    );
-
     postFbCustomConversionEvent({
       eventname: "CADASTRO-MINHA_PRIMEIRA_INSTALACAO-SFV",
     });
+
+    router.push("/obrigado");
   } catch (err) {}
 };
