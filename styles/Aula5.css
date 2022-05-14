@@ -1,0 +1,111 @@
+.containera5{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+
+    grid-template-areas: 
+    'la5 box-a51 box-a52 ra5'
+                                  ;
+  margin-top: 4rem;
+  }
+  
+
+.la5{
+
+  grid-area: la5;
+}
+
+.ra5{
+
+  grid-area: ra5;
+}
+
+  .box-a51{
+
+    grid-area: box-a51;
+  }
+  
+  .box-a52{
+    background-color: rgb(255 250 201);
+    grid-area: box-a52;
+  }
+
+  #tita5{
+    font-size: 2vw;
+    text-align: center;
+    padding-bottom: 0.7rem;
+    padding-top: 3.5rem;
+    color: #ff9415;
+  }
+
+  #desca5{
+    font-size: 1.8vw;
+    text-align: center;
+    font-weight: 400;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  #tira{
+    width: 44vw;
+  }
+
+  @media only screen and (max-width:820px){
+
+    #tira{
+      width: 100vw;
+    }
+
+    .containera5{
+      display: grid;
+      grid-template-columns: 1fr;
+  
+      grid-template-areas: 
+      'box-a51' 
+      'box-a52'
+                                    ;
+    margin-top: 4rem;
+    }
+    
+  
+  .la5{
+  
+    grid-area: la5;
+  }
+  
+  .ra5{
+  
+    grid-area: ra5;
+  }
+  
+    .box-a51{
+
+      grid-area: box-a51;
+    }
+    
+    .box-a52{
+      background-color: rgb(255, 255, 255);
+      grid-area: box-a52;
+    }
+  
+  
+    #desca5{
+      font-size: 1.1rem;
+      text-align: center;
+      font-weight: 400;
+      padding-bottom: 1rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    #tita5{
+      font-size: 1.4rem;
+      text-align: center;
+      padding-bottom: 0.7rem;
+      padding-top: 4.5rem;
+      color: #ff9415;
+      padding-right: 0.8rem;
+    padding-left: 0.8rem;
+    }
+  
+
+  }

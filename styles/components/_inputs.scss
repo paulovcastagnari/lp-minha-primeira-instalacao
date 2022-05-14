@@ -1,16 +1,14 @@
 .input-regular {
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: inherit;
   color: $color-grey-light-1;
-  padding: 1.5rem 2rem;
+  padding: 1rem 1.75rem;
   border-radius: $default-border-radius;
   background-color: rgba($color-white, 0.07);
   border: none;
   border-bottom: 3px solid transparent;
   display: block;
-  width: 100%;
-  min-width: 40rem;
   transition: all 0.3s;
 
   @include respond(bp600) {
@@ -79,13 +77,13 @@
   }
 
   &__label {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-weight: 700;
     margin-left: 2rem;
     display: block;
     transition: transform 0.3s, opacity 0.3s, visibility 0.3s, color 0.3s;
     position: relative;
-    bottom: 7rem;
+    bottom: 4.75rem;
     color: $color-grey-light-3;
 
     &--text-area {

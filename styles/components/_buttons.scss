@@ -17,7 +17,7 @@
 
   &--high {
     padding: 2.25rem 4rem;
-    font-size: 1.8rem;
+    font-size: 1rem;
 
     @include respond(bp700) {
       font-size: 1.5rem;
@@ -129,7 +129,7 @@
     &:link,
     &:visited {
       padding: 0.9rem 2rem;
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
   }
 

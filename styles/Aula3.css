@@ -1,0 +1,100 @@
+.containera3{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+
+    grid-template-areas: 
+    'la3 box-a31 box-a32 ra3'
+                                  ;
+  margin-top: 4rem;
+  }
+  
+#telhado{
+  width: 44vw;
+}
+
+.la3{
+
+  grid-area: la3;
+}
+
+.ra3{
+
+  grid-area: ra3;
+}
+
+  .box-a31{
+
+    grid-area: box-a31;
+  }
+  
+  .box-a32{
+    background-color: rgb(255 250 201);
+    grid-area: box-a32;
+  }
+
+#tita3{
+  font-size: 2vw;
+  text-align: center;
+  padding-bottom: 0.7rem;
+  padding-top: 4.6rem;
+  color: #ff9415;
+}
+
+#desca3{
+  font-size: 1.8vw;
+  text-align: center;
+  font-weight: 400;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media only screen and (max-width:820px){
+
+  #telhado{
+    width: 100vw;
+  }
+
+  .containera3{
+    display: grid;
+    grid-template-columns: 1fr;
+
+    grid-template-areas: 
+    'box-a31' 
+    'box-a32'
+                                  ;
+  margin-top: 4rem;
+  }
+  
+
+
+  .box-a31{
+
+    grid-area: box-a31;
+  }
+  
+  .box-a32{
+    background-color: rgb(255, 255, 255);
+    grid-area: box-a32;
+  }
+
+#tita3{
+  font-size: 1.4rem;
+  text-align: center;
+  padding-bottom: 0.7rem;
+  padding-top: 4.5rem;
+  color: #ff9415;
+  padding-right: 0.8rem;
+    padding-left: 0.8rem;
+}
+
+#desca3{
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: 400;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+}

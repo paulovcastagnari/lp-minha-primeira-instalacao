@@ -18,14 +18,20 @@ class MyDocument extends Document {
           <script
             dangerouslySetInnerHTML={{
               __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-412710853');
+              (function (w, d, s, l, i) {
+              w[l] = w[l] || [];
+              w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+              var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != "dataLayer" ? "&l=" + l : "";
+              j.async = true;
+              j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+              f.parentNode.insertBefore(j, f);
+              })(window, document, "script", "dataLayer", "GTM-K23J2LS");
               `,
             }}
           />
-          {/* Google Ads Scripts - Google Ads */}
+          {/* Google Ads Script - Google Ads */}
 
           {/* Must have tags */}
           <meta charSet="utf-8" />
@@ -53,7 +59,7 @@ class MyDocument extends Document {
           {/* Facebook domain verification meta */}
           <meta
             name="facebook-domain-verification"
-            content="b5bcjdnswaa4yaeeipf79p20gmstfk"
+            content="xcz6sem9ufhwk2qbn9t2lhsdp4cfyw"
           />
           {/* Facebook domain verification meta end */}
 
@@ -115,7 +121,7 @@ class MyDocument extends Document {
 
           {/* Google fonts links */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+          {/* <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin /> */}
           <link
             href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;700&family=Roboto:wght@100;400;700;900&display=swap"
             rel="stylesheet"
@@ -126,30 +132,42 @@ class MyDocument extends Document {
           <script
             dangerouslySetInnerHTML={{
               __html: `
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '507124227249948');
-            fbq('track', 'PageView');
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '507124227249948');
+              fbq('track', 'PageView');
               `,
             }}
           />
           {/* End Facebook pixel scripts */}
         </Head>
         <body itemScope itemType="https://schema.org/WebPage">
-          <div id="fb-root"></div>
-          <script
-            async
-            defer
-            crossOrigin="anonymous"
-            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0"
-            nonce="WqePknsJ"
-          ></script>
+          {/* Tag Manager Noscript - Google Tag Manager */}
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: `
+              <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TPNRJNW"
+              height="0" width="0" style="display:none;visibility:hidden"></iframe>
+              `,
+            }}
+          />
+          {/* End Tag Manager Noscript - Google Tag Manager */}
+          {/* Facebook no script tag */}
+          <noscript>
+            <img
+              height="1"
+              width="1"
+              style={{ display: "none" }}
+              src="https://www.facebook.com/tr?id=507124227249948&ev=PageView&noscript=1"
+            />
+          </noscript>
+          {/* End Facebook no script tag */}
           <Main />
           <NextScript />
         </body>
