@@ -54,7 +54,7 @@ export const PopupError = (props: PopupErrorProps) => {
           <p className="popup__error-text">
             {!error?.includes("JSON") && !error?.includes("fetch")
               ? error || memory
-              : "Ocorreu um erro indeterminado."}
+              : "Ocorreu um erro indeterminado. Tente Novamente."}
           </p>
           <div className="popup__actions-container">
             <button
