@@ -1,5 +1,3 @@
-import { formatPhoneString } from "../../util/string/formatPhoneString";
-import { postFbCustomConversionEvent } from "../../util/other/postFbCustomConversionEvent";
 import { NextRouter } from "next/router";
 
 import { FormState } from "../../data/types";
@@ -43,10 +41,6 @@ export const sendLead = async (props: SendLeadProps) => {
       },
       true
     );
-
-    postFbCustomConversionEvent({
-      eventname: "CADASTRO-MINHA_PRIMEIRA_INSTALACAO-SFV",
-    });
 
     router.push("/obrigado");
   } catch (err) {}

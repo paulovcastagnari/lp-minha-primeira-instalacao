@@ -110,7 +110,7 @@ class MyDocument extends Document {
           {/* Google font links end */}
 
           {/* Facebook pixel scripts */}
-          <script
+          {/* <script
             dangerouslySetInnerHTML={{
               __html: `
               !function(f,b,e,v,n,t,s)
@@ -125,7 +125,7 @@ class MyDocument extends Document {
               fbq('track', 'PageView');
               `,
             }}
-          />
+          /> */}
           {/* End Facebook pixel scripts */}
         </Head>
         <body itemScope itemType="https://schema.org/WebPage">
