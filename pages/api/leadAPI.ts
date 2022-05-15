@@ -42,6 +42,9 @@ export const sendLead = async (props: SendLeadProps) => {
       true
     );
 
-    router.push("/obrigado");
+    var link = document.createElement("a");
+    link.href = "https://www.minhaprimeirainstalacao.com.br/obrigado";
+    document.body.appendChild(link);
+    link.click();
   } catch (err) {}
 };

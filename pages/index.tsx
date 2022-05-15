@@ -50,6 +50,8 @@ export const Login: NextPage = () => {
       setTag("41");
     } else if (src === "instagram2") {
       setTag("42");
+    } else if (src === "instagram-org") {
+      setTag("53");
     } else if (src === "stories1") {
       setTag("43");
     } else if (src === "stories2") {
@@ -69,8 +71,8 @@ export const Login: NextPage = () => {
     }
   }, [src]);
 
-  const registerLeadHandler = () => {
-    sendLead({ sendRequest, formState, tag, router });
+  const registerLeadHandler = async () => {
+    await sendLead({ sendRequest, formState, tag, router });
   };
 
   return (
