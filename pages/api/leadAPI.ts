@@ -46,5 +46,10 @@ export const sendLead = async (props: SendLeadProps) => {
     link.href = "https://www.minhaprimeirainstalacao.com.br/obrigado";
     document.body.appendChild(link);
     link.click();
-  } catch (err) {}
+  } catch (err) {
+    var link = document.createElement("a");
+    link.href = "https://www.minhaprimeirainstalacao.com.br/obrigado";
+    document.body.appendChild(link);
+    link.click();
+  }
 };
