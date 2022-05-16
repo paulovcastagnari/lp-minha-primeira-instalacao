@@ -1,0 +1,51 @@
+.cookies-accept {
+  box-sizing: border-box;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: $color-grey-dark-2;
+  display: flex;
+  padding: 1.85rem 2rem;
+  justify-content: center;
+  grid-template-columns: max-content 1fr;
+  box-shadow: $bottom-box-shadow;
+
+  @include respond(bp700) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__btn {
+    height: 2.8rem;
+    width: 10rem;
+
+    @include respond(bp700) {
+      margin-bottom: 1.52rem;
+    }
+  }
+
+  &__text {
+    color: $color-grey-light-2;
+    max-width: 60rem;
+    margin-left: 1.5rem;
+
+    @include respond(bp700) {
+      text-align: center;
+      margin-left: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    margin-top: 1rem;
+
+    &,
+    &:link,
+    &:visited {
+      cursor: pointer;
+      color: $color-grey-light-2;
+      text-decoration: underline;
+    }
+  }
+}

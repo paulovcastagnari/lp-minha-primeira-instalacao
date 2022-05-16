@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import type { NextPage } from "next";
 
 import { useHttpClient } from "../hooks/httpHook";
@@ -8,6 +7,7 @@ import { HtmlHead } from "../components/meta/HtmlHead";
 import { InputRegular } from "../components/inputs/InputRegular";
 import { LoadingSpinner } from "../components/ui/LoadingSpinner";
 import { PopupError } from "../components/ui/PopupError";
+import { CookiesAccept } from "../components/ui/CookiesAccept";
 import { useForm } from "../hooks/formHook";
 import { sendLead } from "./api/leadAPI";
 import Aula1 from "../content/Aula1";
@@ -89,6 +89,7 @@ export const Login: NextPage = () => {
           closePopupHandler={clearError}
         />
         <div className="App">
+          <CookiesAccept />
           <div className="container">
             <svg className="svg">
               <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox">
