@@ -39,13 +39,12 @@ export const ThankYouPage: NextPage = () => {
         !
         <div className="typ__cta">
           <a
-            id="zap"
             href="https://www.energiasolarlucrativa.com.br/mpi"
             target="_blank"
             rel="noreferrer"
           >
             <button
-              id="zap"
+              id="zap1"
               className="btn btn--yellow btn--wide btn--sm-animation"
             >
               Entrar no grupo
