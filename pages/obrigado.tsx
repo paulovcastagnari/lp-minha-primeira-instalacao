@@ -15,7 +15,6 @@ export const ThankYouPage: NextPage = () => {
       <div className="typ">
         <div className="typ__header">
           <h1 className="heading-primary typ__title">Atenção</h1>
-
           <p className="typ__subtitle">
             Clique no botão AZUL abaixo para fazer parte do nosso Grupo Vip,
             confirmar a sua INSCRIÇÃO e receber as informações do nosso evento.
