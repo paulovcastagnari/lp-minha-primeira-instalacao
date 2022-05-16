@@ -6,7 +6,7 @@
   min-height: 100vh;
 
   &__header {
-    padding: 2rem 0 2.5rem;
+    padding: 1.2rem 0 1.2rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -30,12 +30,12 @@
     text-transform: uppercase;
     margin-bottom: 0.5rem;
     letter-spacing: 0.2rem;
-    font-size: 3rem;
+    font-size: 1.8rem;
   }
 
   &__subtitle {
     display: inline-block;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     max-width: 80%;
   }
 
@@ -62,8 +62,8 @@
   }
 
   &__isnt {
-    max-width: 100rem;
-    padding: 4rem 2rem;
+    width: 80%;
+    padding: 3rem 2rem;
     display: grid;
     grid-template-columns: 1fr;
     // grid-gap: 0.5rem;
@@ -129,6 +129,68 @@
     @include respond(bp400) {
       padding: 0 2rem;
       margin-bottom: 5rem;
+    }
+  }
+
+  &__video-container {
+    position: relative;
+    width: 50%;
+    margin-top: 2rem;
+    box-shadow: $default-box-shadow;
+    margin-bottom: 3rem;
+
+    @include respond(bp1400) {
+      width: 60%;
+    }
+
+    @include respond(bp800) {
+      width: 100%;
+    }
+  }
+
+  &__progress {
+    position: relative;
+    height: 3.1rem;
+    width: 100%;
+    max-width: 100rem;
+    background-color: $color-grey-light-1;
+    border-radius: $default-border-radius;
+    animation: shine 10s ease-out;
+  }
+
+  &__progress-done {
+    position: absolute;
+    height: 3.1rem;
+    width: 60%;
+    background-color: $color-primary-dark;
+    border-bottom-left-radius: $default-border-radius;
+    border-top-left-radius: $default-border-radius;
+    animation: growWidth 2s ease-out, changeColor 1s infinite alternate;
+  }
+
+  &__progress-number {
+    position: relative;
+    font-weight: 700;
+    top: 28%;
+    left: 92%;
+    animation: appear 0.3s ease-out 2s;
+    animation-fill-mode: backwards;
+    font-size: 1.2rem;
+
+    @include respond(bp1100) {
+      left: 90%;
+    }
+
+    @include respond(bp1000) {
+      left: 88%;
+    }
+
+    @include respond(bp600) {
+      left: 82%;
+    }
+
+    @include respond(bp500) {
+      left: 76%;
     }
   }
 }

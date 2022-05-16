@@ -1,10 +1,13 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import type { NextPage } from "next";
 import Link from "next/link";
 
 import { HtmlHeadTyp } from "../components/meta/HtmlHeadTyp";
+import { LoadingSpinner } from "../components/ui/LoadingSpinner";
 
 export const ThankYouPage: NextPage = () => {
+  const [videoLoaded, setVideoLoaded] = useState<boolean>(false);
+
   return (
     <Fragment>
       <HtmlHeadTyp
@@ -16,11 +19,34 @@ export const ThankYouPage: NextPage = () => {
         <div className="typ__header">
           <h1 className="heading-primary typ__title">Atenção</h1>
           <p className="typ__subtitle">
-            Clique no botão AZUL abaixo para fazer parte do nosso Grupo Vip,
-            confirmar a sua INSCRIÇÃO e receber as informações do nosso evento.
+            Sua inscrição esta QUASE finalizada. Para concluir sua participação
+            no evento assista ao vídeo SUPER CURTO abaixo e clique no botão azul
+            abaixo para entrar para nosso grupo VIP do evento!
           </p>
         </div>
         <div className="typ__isnt">
+          <div className="typ__progress">
+            <div className="typ__progress-done">
+              <span className="typ__progress-number">60%</span>
+            </div>
+          </div>
+          <div className="typ__video-container">
+            <div className="video">
+              {!videoLoaded && <LoadingSpinner spinner="STD_CIRCLE" overlay />}
+              <iframe
+                title="Vídeo da Aula"
+                width="853"
+                height="480"
+                src="https://www.youtube.com/embed/-J8XGWA4PVM"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                onLoad={() => {
+                  setVideoLoaded(true);
+                }}
+              ></iframe>
+            </div>
+          </div>
           <a
             id="zap"
             href="https://www.energiasolarlucrativa.com.br/mpi"
@@ -28,26 +54,6 @@ export const ThankYouPage: NextPage = () => {
             rel="noreferrer"
           >
             <img src="/botao-azul.png" className="typ__whatsapp" />
-          </a>
-          <h2 className="typ__isnt-item-title">Atenção</h2>
-          <p className="typ__isnt-item-text">
-            Atenção: Essa etapa é essencial para confirmar a sua inscrição! Na
-            próxima tela aperte em “Entrar no Grupo”
-          </p>
-        </div>
-        !
-        <div className="typ__cta">
-          <a
-            href="https://www.energiasolarlucrativa.com.br/mpi"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <button
-              id="zap1"
-              className="btn btn--yellow btn--wide btn--sm-animation"
-            >
-              Entrar no grupo
-            </button>
           </a>
         </div>
       </div>

@@ -82,10 +82,14 @@
 
   &__video-container {
     position: relative;
-    width: 62rem;
-    max-width: 100%;
+    width: 80%;
     margin-top: 3rem;
     box-shadow: $default-box-shadow;
+
+    @include respond(bp500) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
   }
 
   &__offer-img {
