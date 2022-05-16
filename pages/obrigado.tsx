@@ -44,7 +44,10 @@ export const ThankYouPage: NextPage = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <button className="btn btn--yellow btn--wide btn--sm-animation">
+            <button
+              id="zap"
+              className="btn btn--yellow btn--wide btn--sm-animation"
+            >
               Entrar no grupo
             </button>
           </a>
