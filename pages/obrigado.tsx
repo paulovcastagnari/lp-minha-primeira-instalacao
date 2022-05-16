@@ -23,6 +23,7 @@ export const ThankYouPage: NextPage = () => {
         </div>
         <div className="typ__isnt">
           <a
+            id="zap"
             href="https://www.energiasolarlucrativa.com.br/mpi"
             target="_blank"
             rel="noreferrer"
@@ -38,6 +39,7 @@ export const ThankYouPage: NextPage = () => {
         !
         <div className="typ__cta">
           <a
+            id="zap"
             href="https://www.energiasolarlucrativa.com.br/mpi"
             target="_blank"
             rel="noreferrer"
