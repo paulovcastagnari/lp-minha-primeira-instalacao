@@ -10,12 +10,15 @@ function Aula3() {
           <img id="telhado" src="/telhado.jpg" alt="teste" />
         </div>
 
-        <div className="box box-a32">
-          <h1 id="tita3">Aula 03 - Telhado à Prova de Erros - 01/05 </h1>
-          <h1 id="desca3">
-            Nesta aula prática, ao vivo, vamos te ensinar a instalar e fixar as
-            placas solares no telhado. Esse é o alicerce para uma Instalação
-            Perfeita{" "}
+        <div className="box box-a32 class-container">
+          <h1 id="tita3" className="class-title">
+            Aula 03 - Instalação parte 1: Telhado à prova de erros 01/06 às 20h
+          </h1>
+          <h1 id="tita1" className="class-title class-title--2">
+            Você vai aprender:
+          </h1>
+          <h1 id="desca3" className="class-description">
+            Como instalar os painéis solares no telhado
           </h1>
         </div>
       </div>

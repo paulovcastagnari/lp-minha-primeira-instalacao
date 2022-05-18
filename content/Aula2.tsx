@@ -9,12 +9,16 @@ function Aula2() {
         <div className="box box-5">
           <img id="mapa" src="/mapa.jpg" alt="teste" />
         </div>
-
-        <div className="box box-6">
-          <h1 id="tita2">Aula 02 - O mapa para o Sucesso - 31/05</h1>
-          <h1 id="desca2">
-            Nesta aula vamos te apresentar o mapa para sucesso. O passo a passo
-            para você sair do zero até os 23 mil reais de faturamento.
+        <div className="box box-6 class-container">
+          <h1 id="tita1" className="class-title">
+            Aula 02 - O mapa para o sucesso 31/05 às 20h
+          </h1>
+          <h1 id="tita1" className="class-title class-title--2">
+            Você vai aprender:
+          </h1>
+          <h1 id="desca2" className="class-description">
+            O passo a passo para você ganhar de R$ 4.600 a R$ 23.000 por mês com
+            energia solar independente do seu nível de conhecimento em elétrica
           </h1>
         </div>
       </div>

@@ -10,12 +10,17 @@ function Aula4() {
           <img id="perfeita" src="/perfeita.jpg" alt="teste" />
         </div>
 
-        <div className="box box-a42">
-          <h1 id="tita4">Aula 04 - Instalação Perfeita - 02/05</h1>
-          <h1 id="desca4">
-            A cereja do bolo! Na nossa segunda aula prática você vai aprender a
-            ligar um sistema de energia solar ao vivo, mesmo que você nunca
-            tenha ouvido falar de elétrica.{" "}
+        <div className="box box-a42 class-container">
+          <h1 id="tita4" className="class-title">
+            Aula 04 - Instalação parte 2: Conectando o sistema à rede elétrica
+            02/06 às 20h
+          </h1>
+          <h1 id="tita1" className="class-title class-title--2">
+            Você vai aprender:
+          </h1>
+          <h1 id="desca4" className="class-description">
+            Como ligar seu sistema na rede elétrica mesmo que você seja
+            iniciante na área da elétrica
           </h1>
         </div>
       </div>

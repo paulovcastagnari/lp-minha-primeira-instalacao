@@ -29,7 +29,7 @@ export const Headline = (props: HeadlineProps) => {
         alt="Thulio e Victor - Minha Primeira Instalação"
         className="headline__img"
       />
-      <div className="headline__copy-and-form">
+      <div id="cadastro" className="headline__copy-and-form">
         <p className="headline__main-copy">
           Descubra como ganhar de{" "}
           <span className="headline__main-copy--highlight">

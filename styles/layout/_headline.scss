@@ -56,10 +56,11 @@
   }
 
   &__main-copy {
-    line-height: 1.6rem;
-    font-size: 1.1rem;
+    line-height: 1.7rem;
+    font-size: 1.3rem;
     width: 100%;
     margin-bottom: 0.8rem;
+    font-family: $font-title;
 
     &--highlight {
       color: $color-primary-light;

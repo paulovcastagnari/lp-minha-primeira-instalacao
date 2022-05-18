@@ -1,0 +1,42 @@
+.class-container {
+  padding: 1rem;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.class-title {
+  font-size: 1.2rem !important;
+  text-align: left !important;
+  padding: 0 !important;
+  font-family: $font-title;
+  line-height: 1.55rem;
+
+  @include respond(bp1000) {
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  &--2 {
+    padding-top: 0.5rem !important;
+
+    @include respond(bp1000) {
+      padding-top: 0.5rem !important;
+    }
+  }
+}
+
+.class-description {
+  font-size: 1rem !important;
+  text-align: left !important;
+  padding: 0 !important;
+  margin-top: 1.3rem !important;
+  font-weight: 400;
+
+  &__list-item {
+    margin-bottom: 0.4rem;
+  }
+
+  &--list {
+    padding-left: 1.5rem !important;
+  }
+}
