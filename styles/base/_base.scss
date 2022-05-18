@@ -11,17 +11,17 @@
 //   outline: none;
 // }
 
-// // REDEFINING REM SIZE
-// html {
-//   font-size: 62.5%; // This defines 1rem = 10px
-//   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-//   -webkit-tap-highlight-color: transparent;
-//   scroll-behavior: smooth;
+// REDEFINING REM SIZE
+html {
+  // font-size: 62.5%; // This defines 1rem = 10px
+  // -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  // -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
 
-//   @include respond(bp900) {
-//     font-size: 50%;
-//   }
-// }
+  // @include respond(bp900) {
+  //   font-size: 50%;
+  // }
+}
 
 // body {
 //   box-sizing: border-box;
@@ -30,29 +30,29 @@
 //   padding: 0;
 // }
 
-// ::selection {
-//   background-color: $color-primary;
-//   color: $color-black;
-// }
+::selection {
+  background-color: $color-primary;
+  color: $color-black;
+}
 
-// ::-webkit-scrollbar {
-//   width: 0.8rem;
-//   height: 0;
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0;
 
-//   @include respond(bp500) {
-//     width: 0.4rem;
-//   }
-// }
+  @include respond(bp500) {
+    width: 0.4rem;
+  }
+}
 
-// ::-webkit-scrollbar-track {
-//   background: transparent;
-// }
+::-webkit-scrollbar-track {
+  background: transparent;
+}
 
-// ::-webkit-scrollbar-thumb {
-//   background: $color-grey-dark-4;
-//   border-radius: 10px;
-// }
+::-webkit-scrollbar-thumb {
+  background: $color-grey-dark-4;
+  border-radius: 10px;
+}
 
-// ::-webkit-scrollbar-thumb:hover {
-//   background: rgba($color-grey-dark-4, 0.8);
-// }
+::-webkit-scrollbar-thumb:hover {
+  background: rgba($color-grey-dark-4, 0.8);
+}

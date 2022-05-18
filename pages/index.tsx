@@ -4,23 +4,17 @@ import type { NextPage } from "next";
 
 import { useHttpClient } from "../hooks/httpHook";
 import { HtmlHead } from "../components/meta/HtmlHead";
-import { InputRegular } from "../components/inputs/InputRegular";
-import { LoadingSpinner } from "../components/ui/LoadingSpinner";
 import { PopupError } from "../components/ui/PopupError";
 import { CookiesAccept } from "../components/ui/CookiesAccept";
 import { useForm } from "../hooks/formHook";
 import { sendLead } from "./api/leadAPI";
+import { Headline } from "../content/Headline";
 import Aula1 from "../content/Aula1";
 import Aula2 from "../content/Aula2";
 import Aula3 from "../content/Aula3";
 import Aula4 from "../content/Aula4";
 import Aula5 from "../content/Aula5";
 import AboutUs from "../content/AboutUs";
-
-import {
-  VALIDATOR_EMAIL,
-  VALIDATOR_REQUIRE,
-} from "../util/validation/validators";
 
 export const Login: NextPage = () => {
   const { sendRequest, error, clearError, isLoading } = useHttpClient();
@@ -90,76 +84,12 @@ export const Login: NextPage = () => {
         />
         <div className="App">
           <CookiesAccept />
-          <div className="container">
-            <svg className="svg">
-              <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox">
-                <path d="M0,0 H0.915 a0.055,0.098,0,0,1,0.085,0.08 V0.902 a0.065,0.098,0,0,1,-0.085,0.098 H0 a0,0,0,0,1,0,0 V0 A0,0,0,0,1,0,0"></path>
-              </clipPath>
-            </svg>
-            <div className="clipped"></div>
-            <div className="l1">
-              <h1>space</h1>
-            </div>
-            <div className="r1"></div>
-            <div className="box box-1">
-              <h1 id="chamada1">
-                Aprenda a Instalar um <br />
-                Sistema de Energia Solar e<br /> ganhe de{" "}
-                <span style={{ color: "#ff9635" }}>R$ 4.600 </span> <br />a{" "}
-                <span style={{ color: "#ff9635" }}>R$ 23.000</span> por mês
-              </h1>
-
-              <div id="form">
-                <form
-                  id="f123"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                  }}
-                >
-                  {isLoading && <LoadingSpinner spinner="GRID_SCALE" />}
-                  <div className="form__group">
-                    <InputRegular
-                      id="name"
-                      type="text"
-                      label="Nome"
-                      title="Insira o seu nome"
-                      inputHandler={inputHandler}
-                      validators={[VALIDATOR_REQUIRE()]}
-                      filter="CHAR_ONLY"
-                      noMinWidth
-                    />
-                  </div>
-                  <div className="form__group">
-                    <InputRegular
-                      id="email"
-                      type="email"
-                      label="E-mail"
-                      title="Insira o seu e-mail"
-                      inputHandler={inputHandler}
-                      validators={[VALIDATOR_EMAIL()]}
-                      transform="LOWERCASE"
-                      noMinWidth
-                    />
-                  </div>
-                  <button
-                    disabled={!formState.isValid}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      registerLeadHandler();
-                    }}
-                    className="btn btn--yellow btn--wide btn--small"
-                  >
-                    Garantir a vaga!
-                  </button>
-                </form>
-              </div>
-            </div>
-            <div className="box box-2">
-              <img id="Logo" src="/Logo.png" alt="teste" />
-              <img id="img1" src="/teste.png" alt="teste" />
-              <img id="img2" src="/Teste2.png" alt="teste" />
-            </div>
-          </div>
+          <Headline
+            isLoading={isLoading}
+            inputHandler={inputHandler}
+            formState={formState}
+            registerLeadHandler={registerLeadHandler}
+          />
           <Aula1 />
           <Aula2 />
           <Aula3 />

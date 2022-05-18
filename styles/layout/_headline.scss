@@ -1,0 +1,108 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+*:focus {
+  outline: none;
+}
+
+.headline {
+  box-sizing: border-box;
+  background-color: $color-grey-dark-1;
+  margin: 0;
+  padding: 0;
+  background-color: $color-grey-dark-1;
+
+  display: grid;
+  grid-template-columns: 57% 37%;
+  grid-gap: 6%;
+  padding: 2rem 6rem;
+  align-items: center;
+
+  @include respond(bp1300) {
+    padding: 2rem 3rem;
+    grid-template-columns: 65% 31%;
+    grid-gap: 4%;
+  }
+
+  @include respond(bp1000) {
+    grid-template-columns: 100%;
+    grid-gap: 0;
+    padding: 1rem 1.5rem;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+
+    @include respond(bp1000) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__copy-and-form {
+    color: $color-grey-light-2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond(bp1000) {
+      text-align: center;
+    }
+  }
+
+  &__main-copy {
+    line-height: 1.6rem;
+    font-size: 1.1rem;
+    width: 100%;
+    margin-bottom: 0.8rem;
+
+    &--highlight {
+      color: $color-primary-light;
+    }
+  }
+
+  &__sub-copy {
+    width: 100%;
+    line-height: 1.35rem;
+    font-size: 0.9rem;
+    margin-bottom: 2.5rem;
+
+    @include respond(bp1000) {
+      margin-bottom: 1.5rem;
+    }
+
+    // @include respond(bp1000) {
+    //   font-size: 0.85rem;
+    // }
+  }
+
+  &__form {
+    margin-bottom: 1rem;
+  }
+
+  &__certificate-copy {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+    max-width: 90%;
+    line-height: 1.35rem;
+
+    &--highlight {
+      color: $color-primary-light;
+      font-weight: 700;
+    }
+
+    @include respond(bp1300) {
+      max-width: 100%;
+    }
+
+    // @include respond(bp1000) {
+    //   font-size: 0.85rem;
+    // }
+  }
+}

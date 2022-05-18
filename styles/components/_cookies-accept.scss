@@ -10,6 +10,7 @@
   justify-content: center;
   grid-template-columns: max-content 1fr;
   box-shadow: $bottom-box-shadow;
+  z-index: 99;
 
   @include respond(bp700) {
     flex-direction: column;
