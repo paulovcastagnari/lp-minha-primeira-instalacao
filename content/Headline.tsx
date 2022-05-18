@@ -89,7 +89,11 @@ export const Headline = (props: HeadlineProps) => {
           <span className="headline__certificate-copy--highlight">
             certificado de participação
           </span>{" "}
-          100% online e 100% gratuito do dia 30/05 a 5/06 às 20h
+          100% online e{" "}
+          <span className="headline__certificate-copy--highlight">
+            100% gratuito
+          </span>{" "}
+          do dia 30/05 a 5/06 às 20h
         </p>
       </div>
     </div>
