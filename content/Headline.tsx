@@ -90,7 +90,7 @@ export const Headline = (props: HeadlineProps) => {
           </form>
         </div>
         <p className="headline__certificate-copy headline__certificate-copy--date">
-          30/05 a 5/06 às 20h00
+          30/05 a 05/06 às 20h00
         </p>
       </div>
     </div>
