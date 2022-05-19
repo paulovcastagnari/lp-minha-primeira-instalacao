@@ -5,10 +5,10 @@
   z-index: 100;
   @include center-xy-axis-horizontal;
 
-  @include respond(bp900) {
-    position: fixed;
-    height: calc(100% - 6rem);
-  }
+  // @include respond(bp900) {
+  //   position: fixed;
+  //   height: calc(100% - 6rem);
+  // }
 
   &__overlay {
     position: absolute;
