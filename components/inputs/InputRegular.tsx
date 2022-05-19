@@ -14,6 +14,7 @@ interface InputRegularProps {
   ) => void;
   label: string;
   title: string;
+  helpertext: string;
   validators: { type: string; val?: number }[];
   initialValue?: string;
   initialValid?: boolean;
@@ -57,6 +58,7 @@ export const InputRegular = (props: InputRegularProps) => {
     setCardFocus,
     reset,
     updateInitialValue,
+    helpertext,
   } = props;
   const [inputState, dispatch] = useReducer(inputReducer, {
     value: initialValue || "",
@@ -137,6 +139,15 @@ export const InputRegular = (props: InputRegularProps) => {
       <label htmlFor={id} className="input-regular__label">
         {label}
       </label>
+      <p
+        className={`input-regular__helpertext ${
+          (isTouched && !isValid) || forceError
+            ? "input-regular__helpertext--active"
+            : ""
+        }`}
+      >
+        {helpertext}
+      </p>
     </Fragment>
   );
 };

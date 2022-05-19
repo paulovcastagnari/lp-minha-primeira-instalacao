@@ -67,6 +67,7 @@
 
     &--highlight {
       color: $color-primary-light;
+      text-decoration: underline;
     }
   }
 
@@ -88,28 +89,39 @@
   &__form {
     position: relative;
     margin-bottom: 1rem;
+    border: solid 2px $color-primary-light;
+    border-radius: $default-border-radius;
+    padding: 1.7rem 1rem;
+    background-color: $color-grey-dark-2;
   }
 
   &__certificate-copy {
     margin-bottom: 1.5rem;
-    font-size: 0.9rem;
-    text-align: center;
-    max-width: 90%;
-    line-height: 1.35rem;
+    font-size: 1rem;
+    line-height: 1.45rem;
+    width: 100%;
 
     &--highlight {
       color: $color-primary-light;
       font-weight: 700;
       text-transform: uppercase;
-      font-size: 1rem;
     }
 
     @include respond(bp1300) {
       max-width: 100%;
     }
 
-    // @include respond(bp1000) {
-    //   font-size: 0.85rem;
-    // }
+    @include respond(bp1000) {
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    &--date {
+      font-weight: 700;
+
+      @include respond(bp1000) {
+        font-size: 1rem;
+      }
+    }
   }
 }

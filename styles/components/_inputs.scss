@@ -2,10 +2,10 @@
   position: relative;
   font-size: 1rem;
   font-family: inherit;
-  color: $color-grey-light-1;
+  color: $color-grey-dark-1;
   padding: 1rem 1.75rem;
   border-radius: $default-border-radius;
-  background-color: rgba($color-white, 0.07);
+  background-color: rgba($color-white, 0.9);
   border: none;
   border-bottom: 3px solid transparent;
   width: 100%;
@@ -73,8 +73,29 @@
     }
   }
 
+  &__helpertext {
+    position: relative;
+    font-size: 0.9rem;
+    bottom: 3rem;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s;
+    color: $color-secondary-light;
+    line-height: normal;
+    height: 0;
+    white-space: nowrap;
+    font-weight: 700;
+
+    &--active {
+      bottom: 0.8rem;
+      opacity: 1;
+      height: 1.5rem;
+    }
+  }
+
   &::-webkit-input-placeholder {
-    color: $color-grey-light-3;
+    color: $color-grey-dark-1;
+    font-weight: 700;
   }
 
   &__label {

@@ -97,6 +97,11 @@
 
   &__invalid-list {
     padding: 0 2rem;
+    color: $color-grey-light-2;
+  }
+
+  &__invalid-item {
+    padding: 0.2rem;
   }
 
   &__actions-container {

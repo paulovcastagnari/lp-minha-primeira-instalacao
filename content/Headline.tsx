@@ -37,9 +37,10 @@ export const Headline = (props: HeadlineProps) => {
           </span>{" "}
           por mês trabalhando com ENERGIA SOLAR.
         </p>
-        <p className="headline__sub-copy">
-          Independentemente da sua profissão e do seu nível de conhecimento de
-          elétrica.
+        <p className="headline__certificate-copy">
+          <span className="headline__certificate-copy--highlight">
+            certificado de participação e 100% gratuito
+          </span>{" "}
         </p>
         <div className="headline__form form--wide">
           <form
@@ -57,6 +58,8 @@ export const Headline = (props: HeadlineProps) => {
                 inputHandler={inputHandler}
                 validators={[VALIDATOR_REQUIRE()]}
                 filter="CHAR_ONLY"
+                helpertext="Insira um nome válido"
+                forceError={formState.inputs?.name?.forceError || false}
                 noMinWidth
               />
             </div>
@@ -69,31 +72,24 @@ export const Headline = (props: HeadlineProps) => {
                 inputHandler={inputHandler}
                 validators={[VALIDATOR_EMAIL()]}
                 transform="LOWERCASE"
+                helpertext="Insira um e-mail válido"
+                forceError={formState.inputs?.email?.forceError || false}
                 noMinWidth
               />
             </div>
             <button
-              disabled={!formState.isValid}
               onClick={(e) => {
                 e.preventDefault();
                 registerLeadHandler();
               }}
               className="btn btn--yellow btn--wide btn--small"
             >
-              Garantir a vaga!
+              Garantir minha vaga!
             </button>
           </form>
         </div>
-        <p className="headline__certificate-copy">
-          Evento com{" "}
-          <span className="headline__certificate-copy--highlight">
-            certificado de participação
-          </span>{" "}
-          100% online e{" "}
-          <span className="headline__certificate-copy--highlight">
-            100% gratuito
-          </span>{" "}
-          do dia 30/05 a 5/06 às 20h
+        <p className="headline__certificate-copy headline__certificate-copy--date">
+          30/05 a 5/06 às 20h00
         </p>
       </div>
     </div>

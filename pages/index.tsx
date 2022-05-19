@@ -5,6 +5,7 @@ import type { NextPage } from "next";
 import { useHttpClient } from "../hooks/httpHook";
 import { HtmlHead } from "../components/meta/HtmlHead";
 import { PopupError } from "../components/ui/PopupError";
+import { PopupInvalid } from "../components/ui/PopupInvalid";
 import { CookiesAccept } from "../components/ui/CookiesAccept";
 import { useForm } from "../hooks/formHook";
 import { sendLead } from "./api/leadAPI";
@@ -18,7 +19,13 @@ import AboutUs from "../content/AboutUs";
 
 export const Login: NextPage = () => {
   const { sendRequest, error, clearError, isLoading } = useHttpClient();
-  const { formState, inputHandler } = useForm(
+  const {
+    formState,
+    inputHandler,
+    reportInvalid,
+    clearInvalid,
+    invalidInputs,
+  } = useForm(
     {
       name: {
         value: "",
@@ -66,7 +73,19 @@ export const Login: NextPage = () => {
   }, [src]);
 
   const registerLeadHandler = async () => {
-    await sendLead({ sendRequest, formState, tag, router });
+    if (formState.isValid) {
+      await sendLead({ sendRequest, formState, tag, router });
+    } else {
+      reportInvalidHandler();
+    }
+  };
+
+  const reportInvalidHandler = () => {
+    reportInvalid(formState.inputs);
+  };
+
+  const closeInvalidPopupHandler = () => {
+    clearInvalid();
   };
 
   return (
@@ -77,6 +96,11 @@ export const Login: NextPage = () => {
         ogImageUrl="/og-image-energia-lucrativa.png"
       />
       <main>
+        <PopupInvalid
+          active={!!invalidInputs}
+          closeInvalidPopupHandler={closeInvalidPopupHandler}
+          invalidInputs={invalidInputs}
+        />
         <PopupError
           error={error}
           active={!!error}
