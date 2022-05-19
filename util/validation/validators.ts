@@ -98,7 +98,7 @@ export const validate = (
     }
     if (validator.type === VALIDATOR_TYPE_EMAIL) {
       isValid =
-        isValid && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value);
+        isValid && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/i.test(value);
     }
     if (validator.type === VALIDATOR_TYPE_PASSWORD) {
       isValid =
@@ -130,7 +130,8 @@ export const validate = (
       isValid =
         value.length === 0
           ? true
-          : isValid && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value);
+          : isValid &&
+            /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/i.test(value);
     }
     if (validator.type === VALIDATOR_TYPE_VALID) {
       isValid = true;
