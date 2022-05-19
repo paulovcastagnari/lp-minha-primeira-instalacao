@@ -44,6 +44,7 @@ export const Headline = (props: HeadlineProps) => {
         </p>
         <div className="headline__form form--wide">
           <form
+            className="headline__form-form"
             onSubmit={(e) => {
               e.preventDefault();
             }}

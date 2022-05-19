@@ -95,6 +95,10 @@
     background-color: $color-grey-dark-2;
   }
 
+  &__form-form {
+    position: relative;
+  }
+
   &__certificate-copy {
     margin-bottom: 1.5rem;
     font-size: 1rem;
