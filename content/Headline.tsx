@@ -60,7 +60,7 @@ export const Headline = (props: HeadlineProps) => {
                 validators={[VALIDATOR_REQUIRE()]}
                 filter="CHAR_ONLY"
                 helpertext="Insira um nome válido"
-                forceError={formState.inputs?.name?.forceError || false}
+                forceError={formState?.inputs?.name?.forceError || false}
                 noMinWidth
               />
             </div>
@@ -74,7 +74,7 @@ export const Headline = (props: HeadlineProps) => {
                 validators={[VALIDATOR_EMAIL()]}
                 transform="LOWERCASE"
                 helpertext="Insira um e-mail válido"
-                forceError={formState.inputs?.email?.forceError || false}
+                forceError={formState?.inputs?.email?.forceError || false}
                 noMinWidth
               />
             </div>

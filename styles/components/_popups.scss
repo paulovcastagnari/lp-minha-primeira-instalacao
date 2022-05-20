@@ -23,6 +23,7 @@
   }
 
   &__content {
+    box-sizing: border-box;
     position: relative;
     padding: 2rem;
     background-color: $color-grey-dark-2;
@@ -31,7 +32,7 @@
     transform: scale(0.25);
     transition: all 0.5s 0.2s;
     max-width: 70%;
-    min-width: 12rem;
+    min-width: 17rem;
     @include center-xy-axis-vertical;
   }
 

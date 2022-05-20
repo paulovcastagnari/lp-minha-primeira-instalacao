@@ -64,7 +64,7 @@ export const PopupInvalid = (props: PopupInvalidProps) => {
           )}
           <div className="popup__actions-container">
             <button
-              className="btn btn--yellow btn--small popup__action"
+              className="btn btn--wide btn--yellow btn--small popup__action"
               onClick={closeInvalidPopupHandler}
             >
               Fechar
